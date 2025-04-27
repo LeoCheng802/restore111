@@ -15,13 +15,12 @@
     .overview { text-align: center; padding: 2rem 1rem; }
     .overview img { max-width: 90%; height: auto; border-radius: 10px; margin-top: 1rem; }
     .overview h2 { font-size: 2rem; color: darkgreen; margin-bottom: 1rem; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 2rem; }
-    .product-card { background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); overflow: hidden; text-align: center; transition: transform 0.4s, box-shadow 0.4s; }
-    .product-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
-    .product-card img { width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease; }
-    .product-card img:hover { transform: scale(1.1); }
-    .product-card h2 { font-size: 1.2rem; margin: 0.5rem 0; color: darkgreen; }
-    .product-card button { background-color: darkgreen; color: white; border: none; padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: background 0.3s; font-size: 0.9rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 2rem; }
+    .product-card { background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; text-align: center; transition: transform 0.3s; }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card img { width: 100%; height: 200px; object-fit: cover; }
+    .product-card h2 { font-size: 1.5rem; margin: 1rem 0; color: darkgreen; }
+    .product-card button { background-color: darkgreen; color: white; border: none; padding: 0.8rem 1.2rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
     .product-card button:hover { background-color: green; }
     .back-to-top { text-align: center; margin: 2rem; }
     .back-to-top a { display: inline-block; padding: 0.8rem 1.5rem; background-color: darkgreen; color: white; border-radius: 5px; text-decoration: none; transition: background 0.3s; }
