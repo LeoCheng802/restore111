@@ -15,7 +15,13 @@
     .overview { text-align: center; padding: 2rem 1rem; }
     .overview img { max-width: 90%; height: auto; border-radius: 10px; margin-top: 1rem; }
     .overview h2 { font-size: 2rem; color: darkgreen; margin-bottom: 1rem; }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 2rem; }
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 2rem; }
+    @media (min-width: 768px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .product-grid { grid-template-columns: repeat(4, 1fr); }
+    }
     .product-card { background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); overflow: hidden; text-align: center; transition: transform 0.4s, box-shadow 0.4s; }
     .product-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
     .product-card img { width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease; }
