@@ -7,11 +7,12 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', '微軟正黑體', sans-serif; }
     body { background: url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E8%8D%B7%E8%8A%B1.jpg') no-repeat center center fixed; background-size: cover; position: relative; min-height: 100vh; }
-    body::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: -1; }
+    body::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.4); z-index: -1; }
     header { text-align: center; padding: 2rem 1rem; color: darkgreen; }
-    header img { max-width: 90%; height: auto; margin-bottom: 1rem; border-radius: 10px; }
+    header img { max-width: 70%; height: auto; margin-bottom: 1rem; border-radius: 10px; }
     header h1 { font-size: 3rem; margin-bottom: 1rem; }
-    header p { font-size: 1.2rem; }
+    header .highlight { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; margin: 0.5rem 0; }
     .overview { text-align: center; padding: 2rem 1rem; }
     .overview img { max-width: 90%; height: auto; border-radius: 10px; margin-top: 1rem; }
     .overview h2 { font-size: 2rem; color: darkgreen; margin-bottom: 1rem; }
@@ -37,15 +38,16 @@
 </head>
 <body>
   <header id="top">
-    <img src="/mnt/data/名片.jpg" alt="名片">
     <h1>騰揚開發會場佈置</h1>
-    <p>治喪追思 🌼 孝獅護主 🌼 靈獅接引 <br> 雄威體面 🏵️ 莊嚴隆重 🏵️ 代送禮品</p>
-    <p>歡迎來電：0976-054-419</p>
+    <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%90%8D%E7%89%87.jpg" alt="名片">
+    <div class="highlight">歡迎來電：0976-054-419</div>
+    <div class="highlight">治喪追思 🌼 孝獅護主 🌼 靈獅接引 <br> 雄威體面 🏵️ 莊嚴隆重 🏵️ 代送禮品</div>
+    <div class="highlight">歡迎各區禮儀同業 各大通路 洽談配合❗️</div>
   </header>
 
   <section class="overview">
     <h2>產品總覽</h2>
-    <img src="/mnt/data/名片2.jpg" alt="產品總覽">
+    <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%90%8D%E7%89%872.jpg" alt="產品總覽">
   </section>
 
   <section class="product-grid">
