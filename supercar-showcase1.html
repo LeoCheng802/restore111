@@ -6,14 +6,23 @@
   <title>超跑展示專區</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', '微軟正黑體', sans-serif; scroll-behavior: smooth; }
-    body { background: #000; color: #fff; min-height: 100vh; }
+    body { background: #000; color: #fff; min-height: 100vh; opacity: 0; animation: fadeInBody 1s forwards; }
+    @keyframes fadeInBody { to { opacity: 1; } }
     header { text-align: center; padding: 2rem 1rem; background: linear-gradient(to bottom, #111, #000); }
     header h1 { font-size: 3rem; margin-bottom: 1rem; color: #ffd700; text-shadow: 0 0 15px #ffd700; }
     header p { font-size: 1.2rem; color: #ccc; }
     .overview { text-align: center; padding: 2rem 1rem; }
     .overview p { font-size: 1.3rem; color: #bbb; max-width: 800px; margin: auto; line-height: 1.8; }
     .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 2rem; }
-    .product-card { background: #111; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.4s, box-shadow 0.4s; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); padding-bottom: 1rem; }
+    .product-card { background: #111; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.4s, box-shadow 0.4s; box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); padding-bottom: 1rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    .product-card:nth-child(1) { animation-delay: 0.2s; }
+    .product-card:nth-child(2) { animation-delay: 0.4s; }
+    .product-card:nth-child(3) { animation-delay: 0.6s; }
+    .product-card:nth-child(4) { animation-delay: 0.8s; }
+    .product-card:nth-child(5) { animation-delay: 1.0s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
     .product-card:hover { transform: scale(1.05); box-shadow: 0 6px 14px rgba(255, 215, 0, 0.5); }
     .product-card img { width: 100%; height: 200px; object-fit: cover; }
     .product-card h2 { margin: 1rem 0 0.5rem 0; font-size: 1.2rem; color: #ffd700; }
@@ -71,7 +80,7 @@
   <section class="video-section">
     <h2>現場實拍影片</h2>
     <video controls>
-      <source src="https://youtube.com/shorts/7yps3YDThEs?feature=share" type="video/mp4">
+      <source src="https://studio.youtube.com/video/7yps3YDThEs/edit" type="video/mp4">
       您的瀏覽器不支援影片播放。
     </video>
   </section>
