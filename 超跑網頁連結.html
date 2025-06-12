@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>婚喪喜慶超跑・阿法車隊</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; scroll-behavior: smooth; }
+    body {
+      background: url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/pngtree-background-material-of-high-end-atmospheric-black-gold-poster-picture-image_1629960.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #eee;
+      min-height: 100vh;
+      position: relative;
+      animation: fadeInBody 1s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInBody {
+      to { opacity: 1; }
+    }
+    header { text-align: center; padding: 2.5rem 1rem; color: gold; position: relative; }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px rgba(255,215,0,0.8), 0 0 20px rgba(255,215,0,0.6);
+      letter-spacing: 3px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 15px rgba(255,215,0,0.7), 0 0 25px rgba(255,215,0,0.5); }
+      to { text-shadow: 0 0 25px rgba(255,215,0,1), 0 0 35px rgba(255,215,0,0.8); }
+    }
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: gold;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      z-index: 999;
+    }
+    .back-button:hover {
+      background: #ffea00;
+      transform: scale(1.1);
+    }
+    .supercar-showcase { max-width: 1400px; margin: 2rem auto; padding: 1rem; }
+    .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .car-card {
+      background: rgba(34, 34, 34, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      overflow: hidden;
+      text-align: center;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .car-card:nth-child(1) { animation-delay: 0.3s; }
+    .car-card:nth-child(2) { animation-delay: 0.5s; }
+    @keyframes fadeUp {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .car-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(255,215,0,0.2); }
+    .car-card img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.3s; }
+    .car-card img:hover { transform: scale(1.05); }
+    .car-card h3 { color: gold; margin: 1rem 0 0.5rem; font-size: 1.5rem; }
+    .car-card p { font-size: 1.1rem; padding: 0 1rem 1rem; color: #ccc; }
+    .cta-button { background: gold; color: #000; border: none; padding: 0.6rem 1.4rem; margin-bottom: 1rem; border-radius: 30px; font-size: 1.1rem; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .cta-button:hover { background: #ffea00; transform: scale(1.08); }
+    footer { text-align: center; padding: 1.8rem; font-size: 0.8rem; background: #000; color: #aaa; }
+    @media (max-width: 768px) { .car-card img { height: 180px; } }
+  </style>
+</head>
+<body>
+<header>
+  <a href="javascript:history.back()" class="back-button">回上一頁</a>
+  <h1>婚喪喜慶超跑・阿法車隊</h1>
+</header>
+<section class="supercar-showcase">
+  <div class="car-grid">
+    <div class="car-card">
+      <a href="supercar-showcase1.html">
+        <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%9C%96%E6%AA%94/%E5%A9%9A%E5%96%AA%E5%96%9C%E6%85%B6%E8%B6%85%E8%B7%91%E3%80%81%E9%98%BF%E6%B3%95%E8%BB%8A%E9%9A%8A%20(1).jpg" alt="婚喪喜慶・超跑車隊">
+      </a>
+      <h3>尊榮啟程・超跑陣容</h3>
+      <p>承載深切敬意，為重要場合增添隆重與氣勢。</p>
+      <button class="cta-button" onclick="location.href='supercar-showcase1.html'">查看詳細</button>
+    </div>
+    <div class="car-card">
+      <a href="supercar-showcase.html">
+        <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%9C%96%E6%AA%94/%E5%A9%9A%E5%96%AA%E5%96%9C%E6%85%B6%E8%B6%85%E8%B7%91%E3%80%81%E9%98%BF%E6%B3%95%E8%BB%8A%E9%9A%8A%20(2).jpg" alt="阿法超跑隊">
+      </a>
+      <h3>典禮首選・阿法車隊</h3>
+      <p>以專業陣容與莊嚴儀式，彰顯無上尊崇之意。</p>
+      <button class="cta-button" onclick="location.href='supercar-showcase.html'">查看詳細</button>
+    </div>
+  </div>
+</section>
+<footer>
+  &copy; 2025 騰揚開發國際有限公司 ｜ 超跑尊榮服務 ｜ 全台支援
+</footer>
+</body>
+</html>

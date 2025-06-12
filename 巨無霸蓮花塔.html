@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>巨無霸蓮花塔 — 蓮開淨土 × 福澤無量</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', '微軟正黑體', sans-serif; scroll-behavior: smooth; }
+    body { background: #fdf8f0; color: #333; line-height: 1.6; }
+    header { background: #fff2cc; text-align: center; padding: 2rem 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    header h1 { font-size: 2.5rem; color: #b8860b; margin-bottom: 0.5rem; }
+    header h2 { font-size: 1.2rem; color: #8b5e00; }
+    section { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
+    .intro p { font-size: 1.2rem; margin-bottom: 1.5rem; text-align: center; }
+    .slider { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); height: 500px; }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
+    .slides img { width: 100%; height: 500px; flex-shrink: 0; object-fit: cover; }
+    .gallery-controls { text-align: center; margin-top: 1rem; }
+    .gallery-controls button { background: #b8860b; color: white; border: none; padding: 0.5rem 1rem; margin: 0 0.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+    .gallery-controls button:hover { background: #d4a017; }
+    .features { margin-top: 2rem; }
+    .features ul { list-style-type: square; padding-left: 1.5rem; }
+    .features li { margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .contact { text-align: center; margin-top: 3rem; }
+    .contact a { display: inline-block; background: #b8860b; color: #fff; padding: 0.8rem 1.5rem; border-radius: 30px; text-decoration: none; font-size: 1.2rem; transition: background 0.3s; }
+    .contact a:hover { background: #d4a017; }
+    .back-to-top { position: fixed; bottom: 20px; right: 20px; }
+    .back-to-top a { background: #b8860b; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 24px; box-shadow: 0 0 10px rgba(0,0,0,0.3); cursor: pointer; }
+    .back-to-top a:hover { background: #d4a017; }
+    footer { background: #fff2cc; text-align: center; padding: 1rem; font-size: 0.9rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+
+<header id="top">
+  <h1>巨無霸蓮花塔</h1>
+  <h2>蓮開淨土 × 福澤無量</h2>
+</header>
+
+<section class="intro">
+  <p>
+    以層層蓮花堆叠而成的巨塔造型，象徵聖潔無垢、超脫輪迴，為故人引路歸往極樂。
+    巨無霸尺寸，氣勢磅礴，寓意功德廣大，祝願亡者靈魂得以超生極樂，生者獲得無盡護佑。
+    蓮花代表著清淨與重生，將深切的哀思化作最莊嚴美麗的祝福，成為儀式中最壯闊而慈悲的象徵。<br>
+    ——莊嚴花開，福慧齊圓。
+  </p>
+</section>
+
+<section class="gallery">
+  <div class="slider" id="slider">
+    <div class="slides">
+      <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%20%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9C%96%E7%89%87%20(1).jpg" alt="巨無霸蓮花塔1">
+      <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%20%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9C%96%E7%89%87%20(2).jpg">
+      <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%20%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9C%96%E7%89%87%20(3).jpg">
+      <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%20%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9C%96%E7%89%87%20(4).jpg">
+    </div>
+  </div>
+  <div class="gallery-controls">
+    <button onclick="prevSlide()">⬅️ 上一張</button>
+    <button onclick="nextSlide()">➡️ 下一張</button>
+  </div>
+</section>
+
+<section class="features">
+  <h2 style="text-align:center; color:#8b5e00; margin-bottom:1rem;">產品特色</h2>
+  <ul>
+    <li>蓮花盛放，福澤廣被。</li>
+    <li>淨土引路，慈悲長存。</li>
+    <li>巨蓮護靈，莊嚴超脫。</li>
+    <li>花開彼岸，思念永恆。</li>
+  </ul>
+</section>
+
+<div class="contact">
+  <a href="tel:0976054419">📞 聯絡我們</a>
+</div>
+
+<div class="back-to-top">
+  <a href="#top" onclick="scrollToTop(event)">⬆️</a>
+</div>
+
+<footer>
+  &copy; 2025 騰揚開發國際有限公司 | 專車配送 | 長期優惠
+</footer>
+
+<script>
+let currentIndex = 0;
+const slides = document.querySelector('.slides');
+const totalSlides = document.querySelectorAll('.slides img').length;
+
+function showSlide(index) {
+  slides.style.transform = `translateX(${-index * 100}%)`;
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  showSlide(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  showSlide(currentIndex);
+}
+
+function scrollToTop(event) {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
