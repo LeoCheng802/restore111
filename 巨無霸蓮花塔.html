@@ -12,9 +12,29 @@
     header h2 { font-size: 1.2rem; color: #8b5e00; }
     section { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
     .intro p { font-size: 1.2rem; margin-bottom: 1.5rem; text-align: center; }
-    .slider { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); height: 500px; }
-    .slides { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
-    .slides img { width: 100%; height: 500px; flex-shrink: 0; object-fit: cover; }
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 100%;
+  height: auto; /* 高度改由圖片撐開 */
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0; /* 防止縮擠 */
+  object-fit: contain; /* 等比例縮放，不裁切 */
+  height: auto;
+  max-height: 500px; /* 限制最高高度 */
+}
+
     .gallery-controls { text-align: center; margin-top: 1rem; }
     .gallery-controls button { background: #b8860b; color: white; border: none; padding: 0.5rem 1rem; margin: 0 0.5rem; border-radius: 5px; cursor: pointer; font-size: 1rem; }
     .gallery-controls button:hover { background: #d4a017; }
@@ -49,7 +69,7 @@
 <section class="gallery">
   <div class="slider" id="slider">
     <div class="slides">
-      <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/%E6%96%B0%E7%9A%84/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%E6%9B%B4%E6%8F%9B%E7%85%A7%E7%89%87%20(3).jpg" alt="巨無霸蓮花塔1">
+      <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/%E6%96%B0%E7%9A%84/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%E6%9B%B4%E6%8F%9B%E7%85%A7%E7%89%87%20(1).jpg" alt="巨無霸蓮花塔1">
       <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/%E6%96%B0%E7%9A%84/%E5%B7%A8%E7%84%A1%E9%9C%B8%E8%93%AE%E8%8A%B1%E5%A1%94%E6%9B%B4%E6%8F%9B%E7%85%A7%E7%89%87%20(2).jpg">
     </div>
   </div>
