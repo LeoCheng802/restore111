@@ -415,12 +415,26 @@
     .category-card img,
     .feature-card img,
     .news-card img {
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius: 18px 18px 0 0;
-      margin: 0 -1.4rem 1rem;
       width: calc(100% + 2.8rem);
+      margin: 0 -1.4rem 1rem;
+      aspect-ratio: 4 / 3;
+      min-height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 18px 18px 0 0;
+    }
+    .category-card h3,
+    .feature-card h3,
+    .news-card h3,
+    .category-card p,
+    .feature-card p,
+    .news-card p,
+    .category-card a,
+    .feature-card a,
+    .news-card a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .hero-tagline {
       width: 100%;
