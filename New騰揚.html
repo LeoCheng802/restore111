@@ -150,13 +150,14 @@
     .category-card,
     .feature-card,
     .news-card {
-      padding: 1.4rem;
+      padding: 0 1.4rem 1.4rem;
       border-radius: 20px;
       background: rgba(255,255,255,0.96);
       border: 1px solid var(--border);
       box-shadow: 0 12px 24px rgba(28, 46, 33, 0.05);
       transition: transform 0.25s ease;
       text-align: center;
+      overflow: hidden;
     }
 
     .category-card:hover,
@@ -302,6 +303,10 @@
     .nav-link { display:block; padding:8px 12px; color:#6b5b2e; font-weight:700; border-radius:8px; }
     .nav-link:hover { background: rgba(47,95,66,0.06); }
 
+    .logo-link img.mobile-logo { display: none; }
+    .logo-link img.default-logo { display: block; }
+    .mobile-menu-toggle { display: none; }
+
     .dropdown { position:absolute; top:calc(100% + 6px); left:0; min-width:220px; background: rgba(0,0,0,0.75); color:#fff; border-radius:10px; padding:6px 0; display:none; z-index:30; }
     .nav-item:hover .dropdown { display:block; }
     .dropdown a { display:block; padding:6px 10px; color:#fff; text-decoration:none; font-size:0.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -413,8 +418,9 @@
       width:100%;
       height:auto;
       display:block;
-      border-radius:18px;
-      object-fit:cover;
+      border-radius: 18px 18px 0 0;
+      margin: 0 -1.4rem 1rem;
+      width: calc(100% + 2.8rem);
     }
     .hero-tagline {
       width: 100%;
