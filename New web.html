@@ -279,14 +279,14 @@
 
     .dropdown { position:absolute; top:calc(100% + 6px); left:0; min-width:220px; background: rgba(0,0,0,0.75); color:#fff; border-radius:10px; padding:6px 0; display:none; z-index:30; }
     .nav-item:hover .dropdown { display:block; }
-    .dropdown a { display:block; padding:8px 12px; color:#fff; text-decoration:none; }
+    .dropdown a { display:block; padding:6px 10px; color:#fff; text-decoration:none; font-size:0.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .dropdown a:hover { background: rgba(255,255,255,0.06); }
 
     @media (max-width:740px) {
       .nav-list { justify-content:flex-start; }
       .dropdown { position:static; background:transparent; color:var(--text); padding:0; }
       .nav-item:hover .dropdown { display:block; }
-      .dropdown a { color:var(--text); padding:6px 0 6px 12px; }
+      .dropdown a { color:var(--text); padding:6px 0 6px 12px; font-size:0.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     }
   </style>
 </head>
@@ -332,7 +332,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#">花禮百科 / Blog</a>
             <div class="dropdown">
-              <a href="#">花卡範例</a>
+              <a href="#">喪禮米塔</a>
+              <a href="#">蓮花塔、蓮花寶塔</a>
+              <a href="#">喪禮蘭花、追思蘭花</a>
+              <a href="#">告別式花籃、喪禮花籃</a>
+              <a href="#">告別式靈獅、喪禮靈獅、靈獅出租</a>
+              <a href="#">紙紮用品</a>
+              <a href="#">祝賀花籃、神明祝壽、開幕花籃</a>
             </div>
           </li>
           <li class="nav-item">
