@@ -193,10 +193,28 @@
       font-weight: 700;
     }
 
+    .category-card {
+      padding: 0;
+    }
+
+    .product-card {
+      width: 100%;
+    }
+
     .category-card .image-link {
       display: block;
-      width: calc(100% + 2.8rem);
-      margin: 0 -1.4rem 1rem;
+      width: 100%;
+      margin: 0 0 1rem;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 18px 18px 0 0;
+    }
+
+    .category-card h3,
+    .category-card p,
+    .category-card .card-button {
+      margin-left: 1.4rem;
+      margin-right: 1.4rem;
       aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: 18px 18px 0 0;
@@ -446,9 +464,12 @@
     .category-card p,
     .feature-card p,
     .news-card p,
-    .category-card a,
-    .feature-card a,
-    .news-card a {
+    .category-card h3,
+    .feature-card h3,
+    .news-card h3,
+    .category-card p,
+    .feature-card p,
+    .news-card p {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
