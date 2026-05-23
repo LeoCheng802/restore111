@@ -260,27 +260,108 @@
         flex-direction: column;
       }
     }
+
+    /* Top navigation styles */
+    .top-nav {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      padding: 6px 12px;
+      margin: 0.6rem 0 1.2rem;
+      border: 1px solid rgba(31,61,47,0.06);
+      flex: 1 1 auto;
+      margin-left: 1rem;
+    }
+
+    .nav-list { display:flex; gap:0.6rem; flex-wrap:wrap; list-style:none; margin:0; padding:0; justify-content:center; align-items:center; }
+    .nav-item { position:relative; }
+    .nav-link { display:block; padding:8px 12px; color:#6b5b2e; font-weight:700; border-radius:8px; }
+    .nav-link:hover { background: rgba(47,95,66,0.06); }
+
+    .dropdown { position:absolute; top:calc(100% + 6px); left:0; min-width:220px; background: rgba(0,0,0,0.75); color:#fff; border-radius:10px; padding:6px 0; display:none; z-index:30; }
+    .nav-item:hover .dropdown { display:block; }
+    .dropdown a { display:block; padding:8px 12px; color:#fff; text-decoration:none; }
+    .dropdown a:hover { background: rgba(255,255,255,0.06); }
+
+    @media (max-width:740px) {
+      .nav-list { justify-content:flex-start; }
+      .dropdown { position:static; background:transparent; color:var(--text); padding:0; }
+      .nav-item:hover .dropdown { display:block; }
+      .dropdown a { color:var(--text); padding:6px 0 6px 12px; }
+    }
   </style>
 </head>
 <body>
   <div class="page-wrap">
     <header id="top" class="site-header" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
-      <a href="https://leocheng802.github.io/restore111/New%20web" title="回到首頁"><img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:88px;height:auto;border-radius:10px;"></a>
+      <a href="https://leocheng802.github.io/restore111/New%20web" title="回到首頁"><img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:188px;height:auto;border-radius:10px;"></a>
+
+      <nav class="top-nav" aria-label="主選單">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="https://leocheng802.github.io/restore111/New%20web">首頁 / Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">台中喪禮花籃</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">喪禮花籃</a>
+            <div class="dropdown">
+              <a href="#">台中喪禮花籃</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">喪禮蘭花</a>
+            <div class="dropdown">
+              <a href="#">台中喪禮蘭花</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">祝賀花籃 / 祝賀蘭花</a>
+            <div class="dropdown">
+              <a href="#">開幕花籃</a>
+              <a href="#">神明祝壽蘭花</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">追思用品</a>
+            <div class="dropdown">
+              <a href="#">喪禮靈獅</a>
+              <a href="#">靈獅出租</a>
+              <a href="#">告別式靈獅</a>
+              <a href="#">喪禮米塔</a>
+              <a href="#">平安米塔</a>
+              <a href="#">告別式米塔</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">花禮百科 / Blog</a>
+            <div class="dropdown">
+              <a href="#">花卡範例</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">花卡範例</a>
+            <div class="dropdown">
+              <a href="#">喪禮花卡 敬輓詞範例</a>
+              <a href="#">祝賀花卡 敬賀詞範例</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
       <div>
         <h1>騰揚開發國際</h1>
         <p class="subtitle">專營追思花籃、靈獅、米塔、罐頭塔與祝賀花藝</p>
       </div>
       <div class="contact-box">
-        <div class="contact-item">LINE：<a href="https://line.me/R/ti/p/@songxing" target="_blank">@songxing</a></div>
+        <div class="contact-item">LINE：<a href="https://line.me/R/ti/p/restore1101" target="_blank">reatore1101</a></div>
         <div class="contact-item">電話：<a href="tel:0976054419">0976-054-419</a></div>
         <div class="badge">24小時線上回應</div>
       </div>
     </header>
 
+    
+
     <section class="hero">
       <h2>喪禮追思與祝賀花藝，一站式專業服務</h2>
       <p>騰揚提供全台配送、嚴選新鮮花材、精緻包裝、專車送達與快速客服。喪禮追思、靈獅守護、罐頭塔、祝賀蘭花皆可訂製。</p>
-      <a class="cta-button" href="https://line.me/R/ti/p/@songxing" target="_blank">立即 LINE 諮詢</a>
+      <a class="cta-button" href="https://line.me/R/ti/p/reatore1101" target="_blank">立即 LINE 諮詢</a>
     </section>
 
     <h2 class="section-title">追思花籃系列</h2>
@@ -376,7 +457,7 @@
 
     <footer>
       騰揚開發國際 統一編號：61512703 | <a href="https://g.page/r/CeokAzgEN4PnEAE/review" target="_blank">Google 五星商家推薦</a><br>
-      LINE：<a href="https://line.me/R/ti/p/@songxing" target="_blank">@songxing</a> | Instagram：<a href="https://www.instagram.com/songxingflower" target="_blank">@songxingflower</a> | Facebook：<a href="https://www.facebook.com/SongXingsm" target="_blank">SongXing</a><br>
+      LINE：<a href="https://line.me/R/ti/p/reatore1101" target="_blank">reatore1101</a> | Instagram：<a href="https://www.instagram.com/songxingflower" target="_blank">reatore1101flower</a> | Facebook：<a href="https://www.facebook.com/SongXingsm" target="_blank">SongXing</a><br>
       &copy; 2026 騰揚 | 全台免運 | 追思流程‧花禮百科
     </footer>
   </div>
