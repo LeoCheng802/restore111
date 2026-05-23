@@ -195,8 +195,8 @@
 
     .category-card .image-link {
       display: block;
-      width: calc(100% + 2.8rem);
-      margin: 0 -1.4rem 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
       aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: 18px 18px 0 0;
@@ -446,12 +446,10 @@
     .category-card p,
     .feature-card p,
     .news-card p,
-    .category-card a,
-    .feature-card a,
-    .news-card a {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .category-card,
+    .feature-card,
+    .news-card {
+      padding: 0 1.4rem 1.4rem;
     }
     .hero-tagline {
       width: 100%;
