@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>松興花苑 | 追思花禮與祝賀花藝</title>
+  <style>
+    :root {
+      --bg: #fffdf5;
+      --card: #ffffff;
+      --text: #1f3d2f;
+      --accent: #97622f;
+      --accent-soft: #f7e7d5;
+      --border: rgba(31, 61, 47, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90)), url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%EF%BC%90%E8%8D%B7%E8%8A%B1.jpg') center/cover fixed no-repeat;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .site-header {
+      display: grid;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      letter-spacing: 0.04em;
+      color: #19492e;
+      text-shadow: 0 0 12px rgba(0,0,0,0.08);
+    }
+
+    .site-header p,
+    .site-header .contact-item {
+      color: #3c5f47;
+      font-size: 1.05rem;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(28, 46, 33, 0.08);
+    }
+
+    .contact-box a {
+      color: #0f3a22;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.1rem;
+      border-radius: 35px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(151, 98, 47, 0.2);
+      font-weight: 700;
+      color: #734d2b;
+    }
+
+    .hero {
+      margin: 1.5rem 0 2.5rem;
+      padding: 2rem 1rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(28, 46, 33, 0.08);
+    }
+
+    .hero h2 {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      margin-bottom: 0.75rem;
+      color: #1f3d2f;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #377252, #82b07c);
+      color: white;
+      padding: 1rem 1.8rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .hero .cta-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .section-title {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+      color: #2b4f3a;
+      text-align: center;
+    }
+
+    .category-grid,
+    .feature-grid,
+    .news-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .category-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .category-card,
+    .feature-card,
+    .news-card {
+      padding: 1.4rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 24px rgba(28, 46, 33, 0.05);
+      transition: transform 0.25s ease;
+    }
+
+    .category-card:hover,
+    .feature-card:hover,
+    .news-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .category-card h3,
+    .feature-card h3,
+    .news-card h3 {
+      margin-bottom: 0.8rem;
+      color: #26412f;
+      font-size: 1.1rem;
+    }
+
+    .category-card p,
+    .feature-card p,
+    .news-card p {
+      color: #4c6154;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .category-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: #2f5f42;
+      color: #fff;
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .feature-card span {
+      display: inline-block;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .news-card time {
+      display: block;
+      margin-top: 1rem;
+      color: #6d7f70;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin: 3rem 0 1rem;
+      padding: 1.8rem 1rem;
+      border-radius: 20px;
+      text-align: center;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--border);
+      color: #5b695f;
+      font-size: 0.95rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      z-index: 10;
+    }
+
+    .back-to-top a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #2f5f42;
+      color: #fff;
+      font-size: 1.4rem;
+      box-shadow: 0 14px 28px rgba(47,95,66,0.2);
+    }
+
+    @media (max-width: 740px) {
+      .site-header,
+      .hero,
+      .category-grid,
+      .feature-grid,
+      .news-grid {
+        padding: 0;
+      }
+
+      .site-header {
+        gap: 0.75rem;
+      }
+
+      .contact-box {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <header id="top" class="site-header">
+      <div>
+        <h1>松興花苑</h1>
+        <p class="subtitle">專營追思花籃、靈獅、米塔、罐頭塔與祝賀花藝</p>
+      </div>
+      <div class="contact-box">
+        <div class="contact-item">LINE：<a href="https://line.me/R/ti/p/@songxing" target="_blank">@songxing</a></div>
+        <div class="contact-item">電話：<a href="tel:0989932306">0989-932-306</a></div>
+        <div class="badge">24小時線上回應</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h2>喪禮追思與祝賀花藝，一站式專業服務</h2>
+      <p>松興花苑提供全台配送、嚴選新鮮花材、精緻包裝、專車送達與快速客服。喪禮追思、靈獅守護、罐頭塔、祝賀蘭花皆可訂製。</p>
+      <a class="cta-button" href="https://line.me/R/ti/p/@songxing" target="_blank">立即 LINE 諮詢</a>
+    </section>
+
+    <h2 class="section-title">追思花籃系列</h2>
+    <div class="category-grid">
+      <article class="category-card">
+        <h3>喪禮花籃</h3>
+        <p>莊嚴肅穆，表達深切哀思，適合告別式、追思會。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/01/" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>蓮花塔</h3>
+        <p>層層堆疊，寄託無限思念，適合靈堂與追思場域。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/02/" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>喪禮米塔</h3>
+        <p>傳統敬意、永恆懷念，兼具實用與體面。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/03/" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>喪禮靈獅</h3>
+        <p>守護靈位、彰顯尊貴，提供多款靈獅造型選擇。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/04/" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>罐頭塔</h3>
+        <p>實用心意、溫暖關懷，適合長輩及禮儀同業配送。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/05/" target="_blank">查看詳情</a>
+      </article>
+    </div>
+
+    <h2 class="section-title">祝賀花藝系列</h2>
+    <div class="category-grid">
+      <article class="category-card">
+        <h3>祝賀蘭花</h3>
+        <p>盛開喜悅，祝福滿滿，適合開幕、慶典與祝賀場合。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/08/" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>祝賀花籃</h3>
+        <p>福壽綿延、健康長壽，象徵誠摯祝福。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/07/" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>祝壽商品</h3>
+        <p>節慶好禮、祝壽專案，兼具體面與實用。</p>
+        <a href="https://songxingflower.tw/product-category/all_product/09" target="_blank">查看詳情</a>
+      </article>
+    </div>
+
+    <h2 class="section-title">品牌特點</h2>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <span>❤️</span>
+        <h3>最真誠的服務</h3>
+        <p>用心傾聽每位客戶需求，提供客製化喪禮與祝賀方案。</p>
+      </article>
+      <article class="feature-card">
+        <span>🌸</span>
+        <h3>最優質的商品</h3>
+        <p>嚴選新鮮花材與精緻材料，品質保證，呈現最高質感。</p>
+      </article>
+      <article class="feature-card">
+        <span>🚚</span>
+        <h3>超迅速送達</h3>
+        <p>準時配送不延誤時效，專車送達，守護每一份誠意。</p>
+      </article>
+      <article class="feature-card">
+        <span>🎁</span>
+        <h3>最用心的包裝</h3>
+        <p>精緻包裝呈現完美心意，讓送禮更有儀式感。</p>
+      </article>
+    </div>
+
+    <h2 class="section-title">最新消息</h2>
+    <div class="news-grid">
+      <article class="news-card">
+        <h3><a href="https://songxingflower.tw/nantun-funeral-lion/" target="_blank">南屯喪禮靈獅專業團隊</a></h3>
+        <p>台中喪禮靈獅專案，提供靈獅守護與儀式演出服務。</p>
+        <time datetime="2026-02-25">2026 年 2 月 25 日</time>
+      </article>
+      <article class="news-card">
+        <h3><a href="https://songxingflower.tw/yancheng-funeral-canned-tower/" target="_blank">鹽埕區喪禮罐頭塔訂購</a></h3>
+        <p>高雄罐頭塔訂製推薦，實用與體面兼具的喪禮禮品。</p>
+        <time datetime="2025-12-25">2025 年 12 月 25 日</time>
+      </article>
+      <article class="news-card">
+        <h3><a href="https://songxingflower.tw/tainan-memorial-flowers/" target="_blank">台南追思花推薦</a></h3>
+        <p>台南告別式追思花、殯儀館追思花配送服務。</p>
+        <time datetime="2026-03-14">2026 年 3 月 14 日</time>
+      </article>
+    </div>
+
+    <footer>
+      松興花苑 統一編號：61512703 | <a href="https://g.page/r/CeokAzgEN4PnEAE/review" target="_blank">Google 五星商家推薦</a><br>
+      LINE：<a href="https://line.me/R/ti/p/@songxing" target="_blank">@songxing</a> | Instagram：<a href="https://www.instagram.com/songxingflower" target="_blank">@songxingflower</a> | Facebook：<a href="https://www.facebook.com/SongXingsm" target="_blank">SongXing</a><br>
+      &copy; 2026 松興花苑 | 全台免運 | 追思流程‧花禮百科
+    </footer>
+  </div>
+
+  <div class="back-to-top">
+    <a href="#top">🔝</a>
+  </div>
+</body>
+</html>
