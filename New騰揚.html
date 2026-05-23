@@ -327,9 +327,14 @@
         margin: 0 auto;
       }
       .logo-link img {
-        width: 172px;
         max-width: 100%;
         height: auto;
+      }
+      .logo-link img.mobile-logo {
+        display: none;
+      }
+      .logo-link img.default-logo {
+        display: block;
       }
       .mobile-menu-toggle {
         display: inline-flex;
@@ -392,6 +397,8 @@
       .dropdown { position: static; background: transparent; color: var(--text); padding: 0; display:block; }
       .nav-item:hover .dropdown { display:block; }
       .dropdown a { color: var(--text); padding: 10px 16px; font-size: 0.95rem; white-space: normal; }
+      .logo-link img.default-logo { display: none; }
+      .logo-link img.mobile-logo { display: block; }
     }
 
     .hero-banner-link { display:block; width:100%; margin:1rem 0; }
@@ -427,7 +434,8 @@
     <header id="top" class="site-header">
       <div class="header-top">
         <a class="logo-link" href="https://leocheng802.github.io/restore111/New%20web" title="回到首頁">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:188px;height:auto;border-radius:10px;">
+          <img class="default-logo" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:188px;height:auto;border-radius:10px;">
+          <img class="mobile-logo" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg" alt="logo" style="width:172px;height:auto;border-radius:10px;">
         </a>
         <button type="button" class="mobile-menu-toggle" aria-label="開啟選單">
           <span></span>
