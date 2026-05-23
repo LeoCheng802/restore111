@@ -195,8 +195,8 @@
 
     .category-card .image-link {
       display: block;
-      width: 100%;
-      margin-bottom: 1rem;
+      width: calc(100% + 2.8rem);
+      margin: 0 -1.4rem 1rem;
       aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: 18px 18px 0 0;
@@ -446,10 +446,12 @@
     .category-card p,
     .feature-card p,
     .news-card p,
-    .category-card,
-    .feature-card,
-    .news-card {
-      padding: 0 1.4rem 1.4rem;
+    .category-card a,
+    .feature-card a,
+    .news-card a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .hero-tagline {
       width: 100%;
@@ -481,7 +483,7 @@
   <div class="page-wrap">
     <header id="top" class="site-header">
       <div class="header-top">
-        <a class="logo-link" href="https://leocheng802.github.io/restore111/New騰揚" title="回到首頁">
+        <a class="logo-link" href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A" title="回到首頁">
           <img class="default-logo" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:188px;height:auto;border-radius:10px;">
           <img class="mobile-logo" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg" alt="logo" style="width:172px;height:auto;border-radius:10px;">
         </a>
@@ -490,7 +492,7 @@
         </button>
         <nav class="top-nav" aria-label="主選單">
           <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="https://leocheng802.github.io/restore111/New騰揚">首頁 / Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">首頁 / Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#">台中喪禮花籃</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#">喪禮花籃</a>
@@ -554,6 +556,7 @@
         <p>Memorial Floral Arrangements</p>
       </div>
     </header>
+
     <div class="category-grid">
       <article class="category-card">
         <div class="product-card">
