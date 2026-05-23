@@ -263,17 +263,41 @@
     }
 
     /* Top navigation styles */
+    .header-top {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      width:100%;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+    }
+
     .top-nav {
       background: rgba(255,255,255,0.95);
       border-radius: 12px;
-      padding: 6px 12px;
+      padding: 10px 12px;
       margin: 0.6rem 0 1.2rem;
       border: 1px solid rgba(31,61,47,0.06);
       flex: 1 1 auto;
       margin-left: 1rem;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      overflow: hidden;
     }
 
-    .nav-list { display:flex; gap:0.6rem; flex-wrap:wrap; list-style:none; margin:0; padding:0; justify-content:center; align-items:center; }
+    .top-nav ul {
+      display:flex;
+      gap:0.6rem;
+      flex-wrap:wrap;
+      list-style:none;
+      margin:0;
+      padding:0;
+      justify-content:center;
+      align-items:center;
+    }
     .nav-item { position:relative; }
     .nav-link { display:block; padding:8px 12px; color:#6b5b2e; font-weight:700; border-radius:8px; }
     .nav-link:hover { background: rgba(47,95,66,0.06); }
@@ -284,10 +308,90 @@
     .dropdown a:hover { background: rgba(255,255,255,0.06); }
 
     @media (max-width:740px) {
-      .nav-list { justify-content:flex-start; }
-      .dropdown { position:static; background:transparent; color:var(--text); padding:0; }
+      .header-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.85rem 0.95rem;
+        border-bottom: 1px solid rgba(31,61,47,0.08);
+      }
+      .site-header {
+        padding-top: 5.2rem;
+      }
+      .logo-link {
+        order: 1;
+        margin: 0 auto;
+      }
+      .logo-link img {
+        width: 172px;
+        max-width: 100%;
+        height: auto;
+      }
+      .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid rgba(31,61,47,0.12);
+        background: rgba(255,255,255,0.95);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .mobile-menu-toggle span,
+      .mobile-menu-toggle span::before,
+      .mobile-menu-toggle span::after {
+        width: 22px;
+        height: 2.5px;
+        background: #1f3d2f;
+        display: block;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+      .mobile-menu-toggle span { position: relative; }
+      .mobile-menu-toggle span::before,
+      .mobile-menu-toggle span::after {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+      .mobile-menu-toggle span::before { top: -7px; }
+      .mobile-menu-toggle span::after { top: 7px; }
+      .mobile-menu-toggle.active span { background: transparent; }
+      .mobile-menu-toggle.active span::before { transform: translateY(7px) rotate(45deg); }
+      .mobile-menu-toggle.active span::after { transform: translateY(-7px) rotate(-45deg); }
+
+      .top-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 18px 34px rgba(28,46,33,0.12);
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .top-nav.active {
+        max-height: 90vh;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .top-nav ul {
+        display: block;
+        padding: 0.85rem 0.95rem 1rem;
+      }
+      .nav-list { display:block; gap:0; }
+      .nav-item { margin-bottom: 0.45rem; }
+      .nav-link { display:block; padding: 12px 16px; border-radius: 16px; background: rgba(47,95,66,0.06); }
+      .dropdown { position: static; background: transparent; color: var(--text); padding: 0; display:block; }
       .nav-item:hover .dropdown { display:block; }
-      .dropdown a { color:var(--text); padding:6px 0 6px 12px; font-size:0.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      .dropdown a { color: var(--text); padding: 10px 16px; font-size: 0.95rem; white-space: normal; }
     }
 
     .hero-banner-link { display:block; width:100%; margin:1rem 0; }
@@ -321,10 +425,13 @@
 <body>
   <div class="page-wrap">
     <header id="top" class="site-header">
-      <div class="header-top" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; width:100%;">
+      <div class="header-top">
         <a class="logo-link" href="https://leocheng802.github.io/restore111/New%20web" title="回到首頁">
           <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:188px;height:auto;border-radius:10px;">
         </a>
+        <button type="button" class="mobile-menu-toggle" aria-label="開啟選單">
+          <span></span>
+        </button>
         <nav class="top-nav" aria-label="主選單">
           <ul class="nav-list">
             <li class="nav-item"><a class="nav-link" href="https://leocheng802.github.io/restore111/New%20web">首頁 / Home</a></li>
@@ -395,7 +502,7 @@
     <div class="category-grid">
       <article class="category-card">
         <div class="product-card">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E9%AB%98%E6%9E%B6%E9%AE%AE%E8%8A%B1.jpg" alt="紙紮產品">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E9%AB%98%E6%9E%B6%E9%AE%AE%E8%8A%B1.jpg" alt="喪禮花籃">
           <h3>喪禮花籃</h3>
           <p>莊嚴肅穆，表達深切哀思</p>
           <a href="" target="_blank">查看詳情</a>
@@ -403,7 +510,7 @@
       </article>
       <article class="category-card">
         <div class="product-card">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E8%93%AE%E8%8A%B1%E5%A1%94.jpg" alt="紙紮產品">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E8%93%AE%E8%8A%B1%E5%A1%94.jpg" alt="蓮花塔">
           <h3>蓮花塔</h3>
           <p>層層堆疊，寄託無限思念</p>
           <a href="" target="_blank">查看詳情</a>
@@ -411,7 +518,7 @@
       </article>
       <article class="category-card">
         <div class="product-card">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E7%B1%B3%E5%A1%94.jpg" alt="紙紮產品">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E7%B1%B3%E5%A1%94.jpg" alt="喪禮米塔">
           <h3>喪禮米塔</h3>
           <p>傳統敬意、永恆懷念</p>
           <a href="" target="_blank">查看詳情</a>
@@ -419,7 +526,7 @@
       </article>
       <article class="category-card">
         <div class="product-card">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E9%9D%88%E7%8D%85.jpg" alt="紙紮產品">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E9%9D%88%E7%8D%85.jpg" alt="喪禮靈獅">
           <h3>喪禮靈獅</h3>
           <p>守護靈位、彰顯尊貴</p>
           <a href="" target="_blank">查看詳情</a>
@@ -427,7 +534,7 @@
       </article>
       <article class="category-card">
         <div class="product-card">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E8%A7%80%E9%9F%B3%E5%B0%8F%E4%BD%9B.jpg" alt="紙紮產品">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E8%A7%80%E9%9F%B3%E5%B0%8F%E4%BD%9B.jpg" alt="持經佛祖">
           <h3>持經佛祖</h3>
           <p>慈航普渡、溫柔守護</p>
           <a href="" target="_blank">查看詳情</a>
@@ -435,7 +542,7 @@
       </article>
       <article class="category-card">
         <div class="product-card">
-          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E9%96%8B%E5%B9%95%E5%96%9C%E7%8D%85.jpg" alt="紙紮產品">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E9%96%8B%E5%B9%95%E5%96%9C%E7%8D%85.jpg" alt="開幕喜獅">
           <h3>開幕囍獅</h3>
           <p>雄獅獻瑞、開運迎福</p>
           <a href="" target="_blank">查看詳情</a>
@@ -448,6 +555,7 @@
       </div>
     <div class="category-grid">
       <article class="category-card">
+        <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="日式蘭花">
         <h3>祝賀蘭花</h3>
         <p>盛開喜悅，祝福滿滿</p>
         <a href="https://songxingflower.tw/product-category/all_product/08/" target="_blank">查看詳情</a>
@@ -532,5 +640,13 @@
   <div class="back-to-top">
     <a href="#top">🔝</a>
   </div>
+  <script>
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const topNav = document.querySelector('.top-nav');
+    menuToggle?.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      topNav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
