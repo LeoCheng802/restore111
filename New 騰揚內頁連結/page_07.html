@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>祝賀蘭花 | 騰揚開發國際</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+      color: #1f3d2f;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.72)),
+        url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E8%83%8C%E6%99%AF.jpg')
+        center center / 100% 100% no-repeat scroll;
+    }
+    a { text-decoration: none; color: inherit; }
+    .simple-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 0.9rem 1rem;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+    }
+    .simple-header img { width: 210px; height: auto; }
+    .simple-header nav { display: flex; gap: 1rem; flex-wrap: wrap; font-weight: 800; color: #4d4d4d; }
+    .simple-header nav a:hover { color: #a17312; }
+    
+    .product-page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    .product-hero {
+      margin: 1.5rem 0 2rem;
+      padding: 2rem 1.4rem;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 18px 42px rgba(12,24,18,0.16);
+      text-align: center;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .product-hero h1 {
+      color: #8f651f;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.45rem;
+    }
+
+    .product-hero p {
+      color: #4c6154;
+      font-weight: 700;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .product-item {
+      overflow: hidden;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.45);
+      box-shadow: 0 16px 34px rgba(12,24,18,0.15);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(12,24,18,0.22);
+    }
+
+    .product-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-body {
+      padding: 1.1rem 1.2rem 1.3rem;
+      text-align: center;
+    }
+
+    .product-body h2 {
+      font-size: 1.12rem;
+      color: #26412f;
+      margin-bottom: 0.45rem;
+    }
+
+    .product-price {
+      color: #a17312;
+      font-weight: 900;
+      font-size: 1.15rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 0.55rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .product-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 0.95rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .line-btn {
+      background: #1fc94c;
+      color: #fff;
+    }
+
+    .detail-btn {
+      background: rgba(47,95,66,0.1);
+      color: #2f5f42;
+    }
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 740px) {
+      .product-page {
+        padding-top: 5rem;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .site-footer {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.94);
+      text-align: center;
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3rem 1rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .footer-main img { width: min(320px, 82%); }
+    .footer-main h3 { color: #9a6a20; }
+    .footer-main a { display: block; color: #0074e8; font-weight: 800; line-height: 2; }
+    .footer-bottom { background: rgba(31,31,31,0.94); color: #fff; padding: .85rem; letter-spacing: .08em; }
+    @media (max-width: 740px) {
+      .simple-header { gap: .8rem; flex-direction: column; }
+      .simple-header img { width: 220px; }
+      .footer-main { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="simple-header">
+    <a href="New騰揚_選單優化(3).html"><img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="騰揚開發國際"></a>
+    <nav>
+      <a href="New騰揚_選單優化(3).html">首頁 / Home</a>
+      <a href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+    </nav>
+  </header>
+
+  <main class="product-page">
+    <section class="product-hero">
+      <h1>祝賀蘭花</h1>
+      <p>盛開喜悅，祝福滿滿</p>
+    </section>
+
+    <section class="product-grid">
+      
+        <article class="product-item">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="日式蘭花">
+          <div class="product-body">
+            <h2>日式蘭花</h2>
+            <div class="product-price">NT$____</div>
+            <div class="product-actions">
+              <a class="line-btn" href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+              <a class="detail-btn" href="#">查看詳情</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-item">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="開幕蘭花">
+          <div class="product-body">
+            <h2>開幕蘭花</h2>
+            <div class="product-price">NT$____</div>
+            <div class="product-actions">
+              <a class="line-btn" href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+              <a class="detail-btn" href="#">查看詳情</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-item">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="祝賀蘭花盆栽">
+          <div class="product-body">
+            <h2>祝賀蘭花盆栽</h2>
+            <div class="product-price">NT$____</div>
+            <div class="product-actions">
+              <a class="line-btn" href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+              <a class="detail-btn" href="#">查看詳情</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-item">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="桌上型蘭花">
+          <div class="product-body">
+            <h2>桌上型蘭花</h2>
+            <div class="product-price">NT$____</div>
+            <div class="product-actions">
+              <a class="line-btn" href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+              <a class="detail-btn" href="#">查看詳情</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-item">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="尊榮蘭花">
+          <div class="product-body">
+            <h2>尊榮蘭花</h2>
+            <div class="product-price">NT$____</div>
+            <div class="product-actions">
+              <a class="line-btn" href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+              <a class="detail-btn" href="#">查看詳情</a>
+            </div>
+          </div>
+        </article>
+        <article class="product-item">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="客製祝賀蘭花">
+          <div class="product-body">
+            <h2>客製祝賀蘭花</h2>
+            <div class="product-price">NT$____</div>
+            <div class="product-actions">
+              <a class="line-btn" href="https://line.me/ti/p/~restore1101" target="_blank">LINE 詢問</a>
+              <a class="detail-btn" href="#">查看詳情</a>
+            </div>
+          </div>
+        </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div><img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg" alt="騰揚開發國際"></div>
+      <div>
+        <h3>騰揚開發國際</h3>
+        <p>統一編號：70502770</p>
+        <a href="https://maps.app.goo.gl/zKCtBFSE5zeSFT11A" target="_blank">GOOGLE MAP 五星商家推薦</a>
+        <a href="New騰揚_選單優化(3).html">回到首頁</a>
+      </div>
+      <div>
+        <h3>騰揚開發國際</h3>
+        <a href="#">所有商品-全台免運</a>
+        <a href="#">追思流程-常見問題</a>
+        <a href="#">花禮百科-相關文章</a>
+        <a href="https://line.me/ti/p/~restore1101" target="_blank">聯繫我們-點擊加入LINE</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 騰揚開發國際, All rights reserved.</div>
+  </footer>
+</body>
+</html>

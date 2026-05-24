@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>騰揚開發國際 | 台中喪禮佈置與禮車服務</title>
+  <style>
+    :root {
+      --bg: #fffdf5;
+      --card: #ffffff;
+      --text: #1f3d2f;
+      --accent: #97622f;
+      --accent-soft: #f7e7d5;
+      --border: rgba(255, 255, 255, 0.28);
+      --glass: rgba(255,255,255,0.78);
+      --glass-strong: rgba(255,255,255,0.9);
+      --shadow-soft: 0 14px 38px rgba(12, 24, 18, 0.14);
+      --shadow-card: 0 16px 34px rgba(12, 24, 18, 0.16);
+      --shadow-hover: 0 22px 46px rgba(12, 24, 18, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.82)), url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E8%83%8C%E6%99%AF.jpg') center/cover no-repeat;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .site-header {
+      display: grid;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      letter-spacing: 0.04em;
+      color: #19492e;
+      text-shadow: 0 0 12px rgba(0,0,0,0.08);
+    }
+
+    .site-header p,
+    .site-header .contact-item {
+      color: #3c5f47;
+      font-size: 1.05rem;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .contact-box a {
+      color: #0f3a22;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.1rem;
+      border-radius: 35px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(151, 98, 47, 0.2);
+      font-weight: 700;
+      color: #734d2b;
+    }
+
+    .hero {
+      margin: 1.5rem 0 2.5rem;
+      padding: 2rem 1rem;
+      border-radius: 24px;
+      background: var(--glass-strong);
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .hero h2 {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      margin-bottom: 0.75rem;
+      color: #1f3d2f;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      margin-bottom: 1.4rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #377252, #82b07c);
+      color: white;
+      padding: 1rem 1.8rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .hero .cta-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .section-title {
+      margin: 2.5rem 0 1rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.02em;
+      color: #2b4f3a;
+      text-align: center;
+    }
+
+    .category-grid,
+    .feature-grid,
+    .news-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .category-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .category-card,
+    .feature-card,
+    .news-card {
+      padding: 0 1.4rem 1.4rem;
+      border-radius: 20px;
+      background: var(--glass-strong);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      text-align: center;
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .category-card:hover,
+    .feature-card:hover,
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(255,255,255,0.55);
+    }
+
+    .category-card h3,
+    .feature-card h3,
+    .news-card h3 {
+      margin-bottom: 0.8rem;
+      color: #26412f;
+      font-size: 1.1rem;
+    }
+
+    .category-card p,
+    .feature-card p,
+    .news-card p {
+      color: #4c6154;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .category-card .card-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: #2f5f42;
+      color: #fff;
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    .category-card {
+      padding: 0;
+    }
+
+    .product-card {
+      width: 100%;
+    }
+
+    .category-card .image-link {
+      display: block;
+      width: 100%;
+      margin: 0 0 1rem;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 18px 18px 0 0;
+    }
+
+    .category-card h3,
+    .category-card p,
+    .category-card .card-button {
+      margin-left: 1.4rem;
+      margin-right: 1.4rem;
+    }
+    .category-card .image-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card span {
+      display: inline-block;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .news-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .news-card time {
+      display: block;
+      margin-top: 1rem;
+      color: #6d7f70;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin: 3rem 0 1rem;
+      padding: 1.8rem 1rem;
+      border-radius: 20px;
+      text-align: center;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color: #5b695f;
+      font-size: 0.95rem;
+    }
+
+    
+
+    @media (max-width: 740px) {
+      .site-header,
+      .hero,
+      .category-grid,
+      .feature-grid,
+      .news-grid {
+        padding: 0;
+      }
+
+      .site-header {
+        gap: 0.75rem;
+      }
+
+      .contact-box {
+        flex-direction: column;
+      }
+    }
+
+    /* Top navigation styles */
+    .header-top {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      width:100%;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+    }
+
+    .top-nav {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 16px;
+      padding: 10px 12px;
+      margin: 0.6rem 0 1.2rem;
+      border: 1px solid rgba(31,61,47,0.08);
+      flex: 1 1 auto;
+      margin-left: 1rem;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      overflow: visible;
+      box-shadow: 0 14px 34px rgba(12, 24, 18, 0.16);
+    }
+
+    .top-nav ul {
+      display:flex;
+      gap:0.6rem;
+      flex-wrap:wrap;
+      list-style:none;
+      margin:0;
+      padding:0;
+      justify-content:center;
+      align-items:center;
+    }
+    .nav-item { position:relative; }
+    .nav-item.has-dropdown::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 18px;
+      z-index: 29;
+    }
+    .nav-link {
+      display:block;
+      padding:9px 13px;
+      color:#6b5b2e;
+      font-weight:700;
+      border-radius:999px;
+      transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
+    }
+    .nav-link:hover {
+      background: rgba(47,95,66,0.08);
+      color:#244d35;
+      transform: translateY(-1px);
+    }
+    .nav-link.active {
+      background:#2f5f42;
+      color:#fff;
+      box-shadow: 0 10px 22px rgba(47,95,66,0.18);
+    }
+
+    .logo-link img.mobile-logo { display: none; }
+    .logo-link img.default-logo { display: block; }
+    .mobile-menu-toggle { display: none; }
+
+    .dropdown {
+      position:absolute;
+      top:calc(100% + 8px);
+      left:0;
+      min-width:240px;
+      max-width:280px;
+      background: rgba(31, 61, 47, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color:#fff;
+      border-radius:16px;
+      padding:8px;
+      z-index:30;
+      opacity:0;
+      visibility:hidden;
+      transform: translateY(10px);
+      pointer-events:none;
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      transition-delay: 0.12s;
+      box-shadow: 0 24px 48px rgba(12,24,18,0.32);
+    }
+    .nav-item:hover .dropdown {
+      opacity:1;
+      visibility:visible;
+      transform: translateY(0);
+      pointer-events:auto;
+      transition-delay: 0s;
+    }
+    .dropdown a {
+      display:block;
+      padding:9px 12px;
+      color:#fff;
+      text-decoration:none;
+      font-size:0.92rem;
+      line-height:1.6;
+      white-space:normal;
+      border-radius:12px;
+    }
+    .dropdown a:hover { background: rgba(255,255,255,0.10); }
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(15, 30, 22, 0.38);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .nav-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    body.menu-open { overflow: hidden; }
+
+
+
+    @media (min-width: 741px) {
+      .site-header {
+        padding-top: 1.2rem;
+      }
+
+      .header-top {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo-link {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .top-nav {
+        flex: 0 1 auto;
+        margin: 0;
+        max-width: calc(100% - 250px);
+      }
+
+      .top-nav ul {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+      }
+
+      .nav-link {
+        padding: 8px 10px;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+
+      .dropdown {
+        left: 50%;
+        transform: translate(-50%, 10px);
+      }
+
+      .nav-item:hover .dropdown {
+        transform: translate(-50%, 0);
+      }
+    }
+
+    @media (max-width:740px) {
+      .header-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 46px 1fr 46px;
+        align-items: center;
+        background: rgba(255,255,255,0.74);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        padding: 0.85rem 0.95rem;
+        border-bottom: 1px solid rgba(31,61,47,0.08);
+        box-shadow: 0 10px 24px rgba(28,46,33,0.06);
+      }
+      .site-header {
+        padding-top: 5.2rem;
+      }
+      .logo-link {
+        order: 1;
+        grid-column: 2;
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      .logo-link img {
+        max-width: 100%;
+        height: auto;
+      }
+      .logo-link img.mobile-logo {
+        display: none;
+      }
+      .logo-link img.default-logo {
+        display: block;
+      }
+      .mobile-menu-toggle {
+        display: inline-flex;
+        order: 2;
+        grid-column: 3;
+        justify-self: end;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid rgba(31,61,47,0.12);
+        background: rgba(255,255,255,0.95);
+        cursor: pointer;
+        flex-shrink: 0;
+        box-shadow: 0 8px 18px rgba(28,46,33,0.08);
+      }
+      .mobile-menu-toggle span,
+      .mobile-menu-toggle span::before,
+      .mobile-menu-toggle span::after {
+        width: 22px;
+        height: 2.5px;
+        background: #1f3d2f;
+        display: block;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+      .mobile-menu-toggle span { position: relative; }
+      .mobile-menu-toggle span::before,
+      .mobile-menu-toggle span::after {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+      .mobile-menu-toggle span::before { top: -7px; }
+      .mobile-menu-toggle span::after { top: 7px; }
+      .mobile-menu-toggle.active span { background: transparent; }
+      .mobile-menu-toggle.active span::before { transform: translateY(7px) rotate(45deg); }
+      .mobile-menu-toggle.active span::after { transform: translateY(-7px) rotate(-45deg); }
+
+      .top-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        height: 100vh;
+        height: 100dvh;
+        width: min(86vw, 360px);
+        margin: 0;
+        padding: 5.4rem 1rem 1.25rem;
+        border-radius: 26px 0 0 26px;
+        background: rgba(255,255,255,0.86);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        box-shadow: -18px 0 42px rgba(28,46,33,0.18);
+        transform: translateX(105%);
+        opacity: 1;
+        pointer-events: none;
+        transition: transform 0.28s ease;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        z-index: 95;
+      }
+      .top-nav.active {
+        transform: translateX(0);
+        pointer-events: auto;
+      }
+      .top-nav ul {
+        display: block;
+        padding: 0;
+      }
+      .nav-list { display:block; gap:0; }
+      .nav-item { margin-bottom: 0.5rem; }
+      .nav-item.has-dropdown::after { display:none; }
+      .nav-link {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding: 13px 16px;
+        border-radius: 18px;
+        background: rgba(47,95,66,0.07);
+        color:#244d35;
+      }
+      .nav-link.active {
+        background:#2f5f42;
+        color:#fff;
+      }
+      .nav-item.has-dropdown > .nav-link::after {
+        content:'⌄';
+        font-size: 1rem;
+        transition: transform 0.22s ease;
+      }
+      .nav-item.has-dropdown.open > .nav-link::after {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: static;
+        min-width: 0;
+        max-width: none;
+        background: rgba(47,95,66,0.045);
+        color: var(--text);
+        margin: 0.35rem 0 0.65rem;
+        padding: 0 0.55rem;
+        border-radius: 18px;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.28s ease, padding 0.25s ease;
+      }
+      .nav-item.open .dropdown {
+        max-height: 1200px;
+        padding: 0.55rem;
+      }
+      .nav-item:hover .dropdown { transform:none; }
+      .dropdown a {
+        color: var(--text);
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        white-space: normal;
+        border-radius: 14px;
+      }
+      .dropdown a:hover { background: rgba(47,95,66,0.08); }
+      .logo-link img.default-logo { display: none; }
+      .logo-link img.mobile-logo { display: block; }
+
+      .category-grid,
+      .feature-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .hero-banner-link { display:block; width:100%; margin:1rem 0; }
+    .hero-banner { width:100%; height:auto; display:block; border-radius:18px; object-fit:cover; }
+    .category-card h3,
+    .feature-card h3,
+    .news-card h3,
+    .category-card p,
+    .feature-card p,
+    .news-card p,
+    .category-card h3,
+    .feature-card h3,
+    .news-card h3,
+    .category-card p,
+    .feature-card p,
+    .news-card p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .hero-tagline {
+      width: 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin: 1rem auto 0;
+      padding: 1.2rem 1.4rem;
+      background: rgba(244, 232, 219, 0.9);
+      border: 1px solid rgba(151, 98, 47, 0.18);
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: #6f513d;
+    }
+    .hero-tagline h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.25em;
+      color: #3d533b;
+    }
+    .hero-tagline p {
+      margin: 0;
+      color: #8f6f55;
+      font-size: 0.95rem;
+    }
+  
+    .category-card .image-link img,
+    .hero-banner {
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .category-card:hover .image-link img {
+      transform: scale(1.045);
+      filter: contrast(1.04) saturate(1.03);
+    }
+
+    .hero-banner-link {
+      filter: drop-shadow(0 18px 38px rgba(12,24,18,0.22));
+    }
+
+    .hero-banner {
+      border: 1px solid rgba(255,255,255,0.38);
+      box-shadow: 0 18px 42px rgba(12,24,18,0.18);
+    }
+
+    .hero-tagline {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0));
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+
+    .nav-link:hover::before {
+      opacity: 1;
+    }
+
+  
+    @media (min-width: 741px) {
+      .site-header {
+        padding-top: 0.8rem;
+      }
+
+      .header-top {
+        position: sticky;
+        top: 0;
+        z-index: 120;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 0.9rem max(2rem, calc((100vw - 1280px) / 2 + 1rem));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        background: rgba(255,255,255,0.96);
+        border-bottom: 1px solid rgba(31,61,47,0.10);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      .logo-link {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-link img.default-logo {
+        width: 210px !important;
+        border-radius: 0 !important;
+      }
+
+      .top-nav {
+        flex: 0 1 auto;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      .top-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.55rem;
+      }
+
+      .nav-link {
+        padding: 8px 9px;
+        color: #4d4d4d;
+        font-size: 0.92rem;
+        border-radius: 8px;
+        background: transparent;
+      }
+
+      .nav-link:hover {
+        background: rgba(151,98,47,0.08);
+        color: #9a6a20;
+        transform: none;
+      }
+
+      .nav-link.active {
+        background: transparent;
+        color: #a17312;
+        box-shadow: none;
+      }
+
+      .dropdown {
+        top: calc(100% + 16px);
+      }
+    }
+
+    footer.site-footer {
+      width: 100vw;
+      margin: 3.5rem 0 0 calc(50% - 50vw);
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
+      color: #333;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3.2rem max(2rem, calc((100vw - 1180px) / 2 + 1rem));
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .footer-brand {
+      text-align: center;
+    }
+
+    .footer-brand img {
+      width: min(330px, 82%);
+      height: auto;
+      display: inline-block;
+    }
+
+    .footer-info,
+    .footer-links {
+      text-align: center;
+      line-height: 1.9;
+    }
+
+    .footer-info h3,
+    .footer-links h3 {
+      margin-bottom: 0.45rem;
+      color: #9a6a20;
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-info p {
+      margin: 0.15rem 0;
+      color: #222;
+      font-size: 1rem;
+    }
+
+    .footer-info a,
+    .footer-links a {
+      display: block;
+      color: #0074e8;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-info a:hover,
+    .footer-links a:hover {
+      color: #9a6a20;
+      transform: translateY(-1px);
+    }
+
+    .footer-bottom {
+      padding: 0.85rem 1rem;
+      background: rgba(31,31,31,0.94);
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.08em;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 740px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2.4rem 1.2rem;
+      }
+
+      .footer-brand img {
+        width: min(280px, 86%);
+      }
+
+      .footer-info h3,
+      .footer-links h3 {
+        font-size: 1.15rem;
+      }
+
+      .footer-bottom {
+        font-size: 0.86rem;
+        line-height: 1.6;
+      }
+    }
+
+  
+    /* 桌機版固定置頂，並預留高度避免蓋住內容 */
+    @media (min-width: 741px) {
+      .header-top {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        z-index: 9999 !important;
+      }
+
+      .site-header {
+        padding-top: 118px !important;
+      }
+
+      .hero-banner-link {
+        margin-top: 1.2rem !important;
+      }
+
+      .dropdown {
+        z-index: 10000;
+      }
+
+      html {
+        scroll-padding-top: 118px;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .site-header {
+        padding-top: 5.2rem !important;
+      }
+    }
+
+  
+    @media (min-width: 741px) {
+      .hero-banner {
+        scroll-margin-top: 130px;
+      }
+    }
+
+
+    /* 右下浮動展開按鈕 */
+    .floating-toolbar {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-toggle {
+      width: 68px;
+      height: 68px;
+      border: 0;
+      border-radius: 24px;
+      background: rgba(52,52,52,0.94);
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.28);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .toolbar-toggle:hover {
+      transform: scale(1.05);
+      background: rgba(38,38,38,0.98);
+    }
+
+    .toolbar-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: all 0.28s ease;
+    }
+
+    .floating-toolbar.open .toolbar-items {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .toolbar-btn {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+      transition: transform 0.22s ease, filter 0.22s ease;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .toolbar-btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.05);
+    }
+
+    .toolbar-line {
+      background: linear-gradient(135deg,#26d94f,#00b63e);
+    }
+
+    .toolbar-ig {
+      background: linear-gradient(135deg,#ff8a00,#e52e71,#6a5cff);
+    }
+
+    .toolbar-fb {
+      background: linear-gradient(135deg,#3390ff,#215bdb);
+    }
+
+    .toolbar-top {
+      background: linear-gradient(135deg,#8d7d70,#6d6258);
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 740px) {
+      .floating-toolbar {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .toolbar-toggle,
+      .toolbar-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+      }
+    }
+
+</style>
+</head>
+<body>
+  <div class="nav-overlay" aria-hidden="true"></div>
+  <div class="page-wrap">
+    <header id="top" class="site-header">
+      <div class="header-top">
+        <a class="logo-link" href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A" title="回到首頁">
+          <img class="default-logo" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82logo.jpg" alt="logo" style="width:220px;height:auto;border-radius:10px;">
+          <img class="mobile-logo" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg" alt="logo" style="width:250px;height:auto;border-radius:10px;">
+        </a>
+        <button type="button" class="mobile-menu-toggle" aria-label="開啟選單">
+          <span></span>
+        </button>
+        <nav class="top-nav" aria-label="主選單">
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link active" href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">首頁 / Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">台中喪禮花籃</a></li>
+            <li class="nav-item has-dropdown">
+              <a class="nav-link" href="#">喪禮花籃</a>
+              <div class="dropdown">
+                <a href="#">台中喪禮花籃</a>
+              </div>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a class="nav-link" href="#">喪禮蘭花</a>
+              <div class="dropdown">
+                <a href="#">台中喪禮蘭花</a>
+              </div>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a class="nav-link" href="#">祝賀花籃 / 祝賀蘭花</a>
+              <div class="dropdown">
+                <a href="#">開幕花籃</a>
+                <a href="#">神明祝壽蘭花</a>
+              </div>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a class="nav-link" href="#">追思用品</a>
+              <div class="dropdown">
+                <a href="#">喪禮靈獅</a>
+                <a href="#">靈獅出租</a>
+                <a href="#">告別式靈獅</a>
+                <a href="#">喪禮米塔</a>
+                <a href="#">平安米塔</a>
+                <a href="#">告別式米塔</a>
+              </div>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a class="nav-link" href="#">花禮百科 / Blog</a>
+              <div class="dropdown">
+                <a href="#">喪禮米塔</a>
+                <a href="#">蓮花塔、蓮花寶塔</a>
+                <a href="#">喪禮蘭花、追思蘭花</a>
+                <a href="#">告別式花籃、喪禮花籃</a>
+                <a href="#">告別式靈獅、喪禮靈獅、靈獅出租</a>
+                <a href="#">紙紮用品</a>
+                <a href="#">祝賀花籃、神明祝壽、開幕花籃</a>
+              </div>
+            </li>
+            <li class="nav-item has-dropdown">
+              <a class="nav-link" href="#">花卡範例</a>
+              <div class="dropdown">
+                <a href="#">喪禮花卡 敬輓詞範例</a>
+                <a href="#">祝賀花卡 敬賀詞範例</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <br>
+      <a class="hero-banner-link" href="https://line.me/ti/p/~restore1101" target="_blank" rel="noreferrer noopener">
+        <img class="hero-banner" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E7%BD%AE%E9%A0%82%E5%90%8D%E7%89%87.jpg" alt="聯絡 LINE ID 立即詢問">
+      </a>
+
+      <div class="hero-tagline">
+        <h3>追思花籃系列</h3>
+        <p>Memorial Floral Arrangements</p>
+      </div>
+    </header>
+
+    <div class="category-grid">
+      <article class="category-card">
+        <div class="product-card">
+          <a class="image-link" href="product-funeral-flower.html">
+            <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E9%AB%98%E6%9E%B6%E9%AE%AE%E8%8A%B1.jpg" alt="喪禮花籃">
+          </a>
+          <h3>喪禮花籃</h3>
+          <p>莊嚴肅穆，表達深切哀思</p>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="product-card">
+          <a class="image-link" href="product-lotus-tower.html">
+            <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E8%93%AE%E8%8A%B1%E5%A1%94.jpg" alt="蓮花塔">
+          </a>
+          <h3>蓮花塔</h3>
+          <p>層層堆疊，寄託無限思念</p>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="product-card">
+          <a class="image-link" href="product-rice-tower.html">
+            <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E7%B1%B3%E5%A1%94.jpg" alt="喪禮米塔">
+          </a>
+          <h3>喪禮米塔</h3>
+          <p>傳統敬意、永恆懷念</p>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="product-card">
+          <a class="image-link" href="product-spirit-lion.html">
+            <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E9%9D%88%E7%8D%85.jpg" alt="喪禮靈獅">
+          </a>
+          <h3>喪禮靈獅</h3>
+          <p>守護靈位、彰顯尊貴</p>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="product-card">
+          <a class="image-link" href="product-buddha.html">
+            <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E8%A7%80%E9%9F%B3%E5%B0%8F%E4%BD%9B.jpg" alt="持經佛祖">
+          </a>
+          <h3>持經佛祖</h3>
+          <p>慈航普渡、溫柔守護</p>
+        </div>
+      </article>
+      <article class="category-card">
+        <div class="product-card">
+          <a class="image-link" href="product-celebration-lion.html">
+            <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/(%E5%B0%81%E9%9D%A2)%E9%96%8B%E5%B9%95%E5%96%9C%E7%8D%85.jpg" alt="開幕喜獅">
+          </a>
+          <h3>開幕囍獅</h3>
+          <p>雄獅獻瑞、開運迎福</p>
+        </div>
+      </article>
+    </div>
+      <div class="hero-tagline">
+        <h3>祝賀花藝系列</h3>
+        <p>Celebration Floral Arrangements</p>
+      </div>
+      <br>
+    <div class="category-grid">
+      <article class="category-card">
+        <a class="image-link" href="product-orchid.html">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="日式蘭花">
+        </a>
+        <h3>祝賀蘭花</h3>
+        <p>盛開喜悅，祝福滿滿</p>
+      </article>
+      <article class="category-card">
+        <h3>祝賀花籃</h3>
+        <p>福壽綿延、健康長壽</p>
+        <a href="" target="_blank">查看詳情</a>
+      </article>
+      <article class="category-card">
+        <h3>祝壽商品</h3>
+        <p>節慶好禮、祝壽專案</p>
+        <a href="" target="_blank">查看詳情</a>
+      </article>
+    </div>
+      <div class="hero-tagline">
+        <h3>品牌特點</h3>
+        <p>Brand Features</p>
+      </div>
+      <br>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <span>❤️</span>
+        <h3>最真誠的服務</h3>
+        <p>用心傾聽每位客戶需求</p>
+      </article>
+      <article class="feature-card">
+        <span>🌸</span>
+        <h3>最優質的商品</h3>
+        <p>嚴選新鮮花材品質保證</p>
+      </article>
+      <article class="feature-card">
+        <span>🚚</span>
+        <h3>超迅速送達</h3>
+        <p>準時配送不延誤時效</p>
+      </article>
+      <article class="feature-card">
+        <span>🎁</span>
+        <h3>最用心的包裝</h3>
+        <p>精緻包裝呈現完美心意</p>
+      </article>
+      <article class="feature-card">
+        <span>☎️</span>
+        <h3>24小時線上回應</h3>
+        <p>隨時解答您的各種疑惑</p>
+      </article>
+      <article class="feature-card">
+        <span>💬</span>
+        <h3>馬上聯繫諮詢</h3>
+        <p>LINE立即溝通快速便利</p>
+      </article>
+    </div>
+      <div class="hero-tagline">
+        <h3>最新消息</h3>
+        <p>Latest News</p>
+      </div>
+      <br>
+    <div class="news-grid">
+      <article class="news-card">
+        <h3><a href="">南屯喪禮靈獅專業團隊</a></h3>
+        <p>台中喪禮靈獅專案，提供靈獅守護與儀式演出服務。</p>
+        <time datetime="2026-02-25">2026 年 2 月 25 日</time>
+      </article>
+      <article class="news-card">
+        <h3><a href="" target="_blank">鹽埕區喪禮罐頭塔訂購</a></h3>
+        <p>台中罐頭塔訂製推薦，實用與體面兼具的喪禮禮品。</p>
+        <time datetime="2025-12-25">2025 年 12 月 25 日</time>
+      </article>
+      <article class="news-card">
+        <h3><a href="" target="_blank">台中追思花推薦</a></h3>
+        <p>台中告別式追思花、殯儀館追思花配送服務。</p>
+        <time datetime="2026-03-14">2026 年 3 月 14 日</time>
+      </article>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg" alt="騰揚開發國際">
+        </div>
+        <div class="footer-info">
+          <h3>騰揚開發國際</h3>
+          <p>統一編號：70502770</p>
+          <a href="https://maps.app.goo.gl/zKCtBFSE5zeSFT11A" target="_blank">GOOGLE MAP 五星商家推薦</a>
+          <a href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">回到首頁</a>
+          <a href="" target="_blank">隱私權政策</a>
+        </div>
+        <div class="footer-links">
+          <h3>騰揚開發國際</h3>
+          <a href="#">所有商品-全台免運</a>
+          <a href="#">追思流程-常見問題</a>
+          <a href="#">花禮百科-相關文章</a>
+          <a href="https://line.me/ti/p/~restore1101" target="_blank">聯繫我們-點擊加入LINE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 騰揚開發國際, All rights reserved.
+      </div>
+    </footer>
+  </div>
+
+  
+  <script>
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const topNav = document.querySelector('.top-nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const dropdownItems = document.querySelectorAll('.nav-item.has-dropdown');
+
+    function closeMenu() {
+      menuToggle?.classList.remove('active');
+      topNav?.classList.remove('active');
+      navOverlay?.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = topNav.classList.toggle('active');
+      menuToggle.classList.toggle('active', isOpen);
+      navOverlay?.classList.toggle('active', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    navOverlay?.addEventListener('click', closeMenu);
+
+    dropdownItems.forEach((item) => {
+      const link = item.querySelector('.nav-link');
+      link?.addEventListener('click', (event) => {
+        if (window.matchMedia('(max-width: 740px)').matches) {
+          event.preventDefault();
+          dropdownItems.forEach((otherItem) => {
+            if (otherItem !== item) otherItem.classList.remove('open');
+          });
+          item.classList.toggle('open');
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  </script>
+
+  <div class="floating-toolbar">
+    <div class="toolbar-items">
+      <a class="toolbar-btn toolbar-line" href="https://line.me/ti/p/~restore1101" target="_blank">LINE</a>
+      <a class="toolbar-btn toolbar-ig" href="https://www.instagram.com/tenyoung_1757?igsh=MTcwOXE1OHg1dmlzeg==" target="_blank">IG</a>
+      <a class="toolbar-btn toolbar-fb" href="https://www.facebook.com/share/1EW33SD2rF/?mibextid=wwXIfr" target="_blank">f</a>
+      <a class="toolbar-btn toolbar-top" href="#top">⌂</a>
+    </div>
+
+    <button class="toolbar-toggle" type="button">✕</button>
+  </div>
+
+
+<script>
+  const floatingToolbar = document.querySelector('.floating-toolbar');
+  const toolbarToggle = document.querySelector('.toolbar-toggle');
+
+  toolbarToggle?.addEventListener('click', () => {
+    floatingToolbar.classList.toggle('open');
+
+    if (floatingToolbar.classList.contains('open')) {
+      toolbarToggle.innerHTML = '✕';
+    } else {
+      toolbarToggle.innerHTML = '☰';
+    }
+  });
+
+  window.addEventListener('load', () => {
+    toolbarToggle.innerHTML = '☰';
+  });
+</script>
+
+</body>
+</html>
