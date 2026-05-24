@@ -334,6 +334,15 @@
       align-items:center;
     }
     .nav-item { position:relative; }
+    .nav-item.has-dropdown::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 18px;
+      z-index: 29;
+    }
     .nav-link {
       display:block;
       padding:9px 13px;
@@ -359,7 +368,7 @@
 
     .dropdown {
       position:absolute;
-      top:calc(100% + 10px);
+      top:calc(100% + 8px);
       left:0;
       min-width:240px;
       max-width:280px;
@@ -375,6 +384,7 @@
       transform: translateY(10px);
       pointer-events:none;
       transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      transition-delay: 0.12s;
       box-shadow: 0 18px 36px rgba(28,46,33,0.22);
     }
     .nav-item:hover .dropdown {
@@ -382,6 +392,7 @@
       visibility:visible;
       transform: translateY(0);
       pointer-events:auto;
+      transition-delay: 0s;
     }
     .dropdown a {
       display:block;
@@ -494,6 +505,8 @@
         right: 0;
         bottom: 0;
         left: auto;
+        height: 100vh;
+        height: 100dvh;
         width: min(86vw, 360px);
         margin: 0;
         padding: 5.4rem 1rem 1.25rem;
@@ -507,6 +520,8 @@
         pointer-events: none;
         transition: transform 0.28s ease;
         overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
         z-index: 95;
       }
       .top-nav.active {
@@ -519,6 +534,7 @@
       }
       .nav-list { display:block; gap:0; }
       .nav-item { margin-bottom: 0.5rem; }
+      .nav-item.has-dropdown::after { display:none; }
       .nav-link {
         display:flex;
         align-items:center;
@@ -556,10 +572,10 @@
         pointer-events: auto;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.25s ease, padding 0.25s ease;
+        transition: max-height 0.28s ease, padding 0.25s ease;
       }
       .nav-item.open .dropdown {
-        max-height: 520px;
+        max-height: 1200px;
         padding: 0.55rem;
       }
       .nav-item:hover .dropdown { transform:none; }
