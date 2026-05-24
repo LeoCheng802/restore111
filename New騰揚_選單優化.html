@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,12 @@
       --text: #1f3d2f;
       --accent: #97622f;
       --accent-soft: #f7e7d5;
-      --border: rgba(31, 61, 47, 0.12);
+      --border: rgba(255, 255, 255, 0.28);
+      --glass: rgba(255,255,255,0.78);
+      --glass-strong: rgba(255,255,255,0.9);
+      --shadow-soft: 0 14px 38px rgba(12, 24, 18, 0.14);
+      --shadow-card: 0 16px 34px rgba(12, 24, 18, 0.16);
+      --shadow-hover: 0 22px 46px rgba(12, 24, 18, 0.22);
     }
 
     * {
@@ -24,7 +29,7 @@
       font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
       line-height: 1.65;
       color: var(--text);
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90)), url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/assest/images/%EF%BC%90%E8%8D%B7%E8%8A%B1.jpg') center/cover fixed no-repeat;
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.82)), url('https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E8%83%8C%E6%99%AF.jpg') center/cover no-repeat;
       min-height: 100vh;
     }
 
@@ -65,10 +70,12 @@
       justify-content: center;
       gap: 1rem;
       padding: 0.75rem 1rem;
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--glass);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(28, 46, 33, 0.08);
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .contact-box a {
@@ -92,10 +99,12 @@
       margin: 1.5rem 0 2.5rem;
       padding: 2rem 1rem;
       border-radius: 24px;
-      background: rgba(255, 255, 255, 0.96);
+      background: var(--glass-strong);
       border: 1px solid var(--border);
       text-align: center;
-      box-shadow: 0 12px 35px rgba(28, 46, 33, 0.08);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .hero h2 {
@@ -152,18 +161,22 @@
     .news-card {
       padding: 0 1.4rem 1.4rem;
       border-radius: 20px;
-      background: rgba(255,255,255,0.96);
+      background: var(--glass-strong);
       border: 1px solid var(--border);
-      box-shadow: 0 12px 24px rgba(28, 46, 33, 0.05);
-      transition: transform 0.25s ease;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       text-align: center;
       overflow: hidden;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     .category-card:hover,
     .feature-card:hover,
     .news-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(255,255,255,0.55);
     }
 
     .category-card h3,
@@ -250,8 +263,11 @@
       padding: 1.8rem 1rem;
       border-radius: 20px;
       text-align: center;
-      background: rgba(255,255,255,0.94);
+      background: var(--glass);
       border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       color: #5b695f;
       font-size: 0.95rem;
     }
@@ -273,7 +289,7 @@
       background: #2f5f42;
       color: #fff;
       font-size: 1.4rem;
-      box-shadow: 0 14px 28px rgba(47,95,66,0.2);
+      box-shadow: 0 18px 34px rgba(12,24,18,0.28);
     }
 
     @media (max-width: 740px) {
@@ -309,7 +325,7 @@
     }
 
     .top-nav {
-      background: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-radius: 16px;
@@ -320,7 +336,7 @@
       margin-left: 1rem;
       transition: max-height 0.3s ease, opacity 0.3s ease;
       overflow: visible;
-      box-shadow: 0 10px 26px rgba(28, 46, 33, 0.06);
+      box-shadow: 0 14px 34px rgba(12, 24, 18, 0.16);
     }
 
     .top-nav ul {
@@ -385,7 +401,7 @@
       pointer-events:none;
       transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
       transition-delay: 0.12s;
-      box-shadow: 0 18px 36px rgba(28,46,33,0.22);
+      box-shadow: 0 24px 48px rgba(12,24,18,0.32);
     }
     .nav-item:hover .dropdown {
       opacity:1;
@@ -422,6 +438,54 @@
       pointer-events: auto;
     }
     body.menu-open { overflow: hidden; }
+
+
+
+    @media (min-width: 741px) {
+      .site-header {
+        padding-top: 1.2rem;
+      }
+
+      .header-top {
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo-link {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .top-nav {
+        flex: 0 1 auto;
+        margin: 0;
+        max-width: calc(100% - 250px);
+      }
+
+      .top-nav ul {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+      }
+
+      .nav-link {
+        padding: 8px 10px;
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+
+      .dropdown {
+        left: 50%;
+        transform: translate(-50%, 10px);
+      }
+
+      .nav-item:hover .dropdown {
+        transform: translate(-50%, 0);
+      }
+    }
 
     @media (max-width:740px) {
       .header-top {
@@ -626,7 +690,9 @@
       border: 1px solid rgba(151, 98, 47, 0.18);
       border-radius: 22px;
       text-align: center;
-      box-shadow: 0 14px 28px rgba(28, 46, 33, 0.08);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       color: #6f513d;
     }
     .hero-tagline h3 {
@@ -640,6 +706,264 @@
       color: #8f6f55;
       font-size: 0.95rem;
     }
+  
+    .category-card .image-link img,
+    .hero-banner {
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .category-card:hover .image-link img {
+      transform: scale(1.045);
+      filter: contrast(1.04) saturate(1.03);
+    }
+
+    .hero-banner-link {
+      filter: drop-shadow(0 18px 38px rgba(12,24,18,0.22));
+    }
+
+    .hero-banner {
+      border: 1px solid rgba(255,255,255,0.38);
+      box-shadow: 0 18px 42px rgba(12,24,18,0.18);
+    }
+
+    .hero-tagline {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0));
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+
+    .nav-link:hover::before {
+      opacity: 1;
+    }
+
+  
+    @media (min-width: 741px) {
+      .site-header {
+        padding-top: 0.8rem;
+      }
+
+      .header-top {
+        position: sticky;
+        top: 0;
+        z-index: 120;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding: 0.9rem max(2rem, calc((100vw - 1280px) / 2 + 1rem));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        background: rgba(255,255,255,0.96);
+        border-bottom: 1px solid rgba(31,61,47,0.10);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      .logo-link {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-link img.default-logo {
+        width: 210px !important;
+        border-radius: 0 !important;
+      }
+
+      .top-nav {
+        flex: 0 1 auto;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      .top-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.55rem;
+      }
+
+      .nav-link {
+        padding: 8px 9px;
+        color: #4d4d4d;
+        font-size: 0.92rem;
+        border-radius: 8px;
+        background: transparent;
+      }
+
+      .nav-link:hover {
+        background: rgba(151,98,47,0.08);
+        color: #9a6a20;
+        transform: none;
+      }
+
+      .nav-link.active {
+        background: transparent;
+        color: #a17312;
+        box-shadow: none;
+      }
+
+      .dropdown {
+        top: calc(100% + 16px);
+      }
+    }
+
+    footer.site-footer {
+      width: 100vw;
+      margin: 3.5rem 0 0 calc(50% - 50vw);
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
+      color: #333;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3.2rem max(2rem, calc((100vw - 1180px) / 2 + 1rem));
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .footer-brand {
+      text-align: center;
+    }
+
+    .footer-brand img {
+      width: min(330px, 82%);
+      height: auto;
+      display: inline-block;
+    }
+
+    .footer-info,
+    .footer-links {
+      text-align: center;
+      line-height: 1.9;
+    }
+
+    .footer-info h3,
+    .footer-links h3 {
+      margin-bottom: 0.45rem;
+      color: #9a6a20;
+      font-size: 1.25rem;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-info p {
+      margin: 0.15rem 0;
+      color: #222;
+      font-size: 1rem;
+    }
+
+    .footer-info a,
+    .footer-links a {
+      display: block;
+      color: #0074e8;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-info a:hover,
+    .footer-links a:hover {
+      color: #9a6a20;
+      transform: translateY(-1px);
+    }
+
+    .footer-bottom {
+      padding: 0.85rem 1rem;
+      background: rgba(31,31,31,0.94);
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.08em;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 740px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2.4rem 1.2rem;
+      }
+
+      .footer-brand img {
+        width: min(280px, 86%);
+      }
+
+      .footer-info h3,
+      .footer-links h3 {
+        font-size: 1.15rem;
+      }
+
+      .footer-bottom {
+        font-size: 0.86rem;
+        line-height: 1.6;
+      }
+    }
+
+  
+    /* 修正桌機版置頂：改用 fixed，避免 sticky 受 header 容器高度限制 */
+    @media (min-width: 741px) {
+      body {
+        padding-top: 96px;
+      }
+
+      .page-wrap {
+        padding-top: 1rem;
+      }
+
+      .site-header {
+        padding-top: 0;
+      }
+
+      .header-top {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        z-index: 9999 !important;
+      }
+
+      .dropdown {
+        z-index: 10000;
+      }
+    }
+
+    @media (max-width: 740px) {
+      body {
+        padding-top: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -784,7 +1108,7 @@
       <br>
     <div class="category-grid">
       <article class="category-card">
-        <a class="image-link" href="https://songxingflower.tw/product-category/all_product/08/" target="_blank">
+        <a class="image-link" href="" target="_blank">
           <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E6%97%A5%E5%BC%8F%E8%98%AD%E8%8A%B1%20(1).jpg" alt="日式蘭花">
         </a>
         <h3>祝賀蘭花</h3>
@@ -793,12 +1117,12 @@
       <article class="category-card">
         <h3>祝賀花籃</h3>
         <p>福壽綿延、健康長壽</p>
-        <a href="https://songxingflower.tw/product-category/all_product/07/" target="_blank">查看詳情</a>
+        <a href="" target="_blank">查看詳情</a>
       </article>
       <article class="category-card">
         <h3>祝壽商品</h3>
         <p>節慶好禮、祝壽專案</p>
-        <a href="https://songxingflower.tw/product-category/all_product/09" target="_blank">查看詳情</a>
+        <a href="" target="_blank">查看詳情</a>
       </article>
     </div>
       <div class="hero-tagline">
@@ -845,26 +1169,45 @@
       <br>
     <div class="news-grid">
       <article class="news-card">
-        <h3><a href="https://songxingflower.tw/nantun-funeral-lion/" target="_blank">南屯喪禮靈獅專業團隊</a></h3>
+        <h3><a href="">南屯喪禮靈獅專業團隊</a></h3>
         <p>台中喪禮靈獅專案，提供靈獅守護與儀式演出服務。</p>
         <time datetime="2026-02-25">2026 年 2 月 25 日</time>
       </article>
       <article class="news-card">
-        <h3><a href="https://songxingflower.tw/yancheng-funeral-canned-tower/" target="_blank">鹽埕區喪禮罐頭塔訂購</a></h3>
+        <h3><a href="" target="_blank">鹽埕區喪禮罐頭塔訂購</a></h3>
         <p>台中罐頭塔訂製推薦，實用與體面兼具的喪禮禮品。</p>
         <time datetime="2025-12-25">2025 年 12 月 25 日</time>
       </article>
       <article class="news-card">
-        <h3><a href="https://songxingflower.tw/tainan-memorial-flowers/" target="_blank">台中追思花推薦</a></h3>
+        <h3><a href="" target="_blank">台中追思花推薦</a></h3>
         <p>台中告別式追思花、殯儀館追思花配送服務。</p>
         <time datetime="2026-03-14">2026 年 3 月 14 日</time>
       </article>
     </div>
 
-    <footer>
-      騰揚開發國際 統一編號：70502770 | <a href="https://g.page/r/CeokAzgEN4PnEAE/review" target="_blank">Google 五星商家推薦</a><br>
-      LINE：<a href="https://line.me/ti/p/~restore1101" target="_blank">restore1101</a> | Instagram：<a href="https://www.instagram.com/tenyoung_1757?igsh=MTcwOXE1OHg1dmlzeg==" target="_blank">restore111</a> | Facebook：<a href="https://www.facebook.com/share/1EW33SD2rF/?mibextid=wwXIfr" target="_blank">騰揚國際開發</a><br>
-      &copy; 2026 騰揚 | 全台免運 | 追思流程‧花禮百科
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg" alt="騰揚開發國際">
+        </div>
+        <div class="footer-info">
+          <h3>騰揚開發國際</h3>
+          <p>統一編號：70502770</p>
+          <a href="https://maps.app.goo.gl/zKCtBFSE5zeSFT11A" target="_blank">GOOGLE MAP 五星商家推薦</a>
+          <a href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">回到首頁</a>
+          <a href="" target="_blank">隱私權政策</a>
+        </div>
+        <div class="footer-links">
+          <h3>騰揚開發國際</h3>
+          <a href="#">所有商品-全台免運</a>
+          <a href="#">追思流程-常見問題</a>
+          <a href="#">花禮百科-相關文章</a>
+          <a href="https://line.me/ti/p/~restore1101" target="_blank">聯繫我們-點擊加入LINE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 騰揚開發國際, All rights reserved.
+      </div>
     </footer>
   </div>
 
