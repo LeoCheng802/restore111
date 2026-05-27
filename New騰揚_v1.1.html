@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>騰揚開發國際 | 台中喪禮佈置與禮車服務</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --bg: #fffdf5;
@@ -482,7 +483,7 @@
         display: grid;
         grid-template-columns: 46px 1fr 46px;
         align-items: center;
-        background: rgba(255,255,255,0.74);
+        background: rgb(255, 255, 255);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         padding: 0.85rem 0.95rem;
@@ -1079,6 +1080,27 @@
       }
     }
 
+    /* Feature icons: replace emoji spans with Font Awesome icons */
+    .feature-card span { display: none; }
+    .feature-card .feature-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(255,250,245,1), rgba(230,200,170,1));
+      border-radius: 50%;
+      box-shadow: 0 14px 30px rgba(12,24,18,0.18), inset 0 2px 6px rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      transform-origin: center center;
+    }
+    .feature-card .feature-icon i { font-size: 1.5rem; color: #ffffff; }
+    .feature-card:hover .feature-icon { transform: translateY(-6px) scale(1.08) rotate(-15deg); box-shadow: 0 20px 40px rgba(12,24,18,0.22), inset 0 2px 6px rgba(255,255,255,0.25); }
+
 </style>
 </head>
 <body>
@@ -1247,32 +1269,32 @@
       <br>
     <div class="feature-grid">
       <article class="feature-card">
-        <span>❤️</span>
+        <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
         <h3>最真誠的服務</h3>
         <p>用心傾聽每位客戶需求</p>
       </article>
       <article class="feature-card">
-        <span>🌸</span>
+        <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
         <h3>最優質的商品</h3>
         <p>嚴選新鮮花材品質保證</p>
       </article>
       <article class="feature-card">
-        <span>🚚</span>
+        <div class="feature-icon"><i class="fa-solid fa-truck"></i></div>
         <h3>超迅速送達</h3>
         <p>準時配送不延誤時效</p>
       </article>
       <article class="feature-card">
-        <span>🎁</span>
+        <div class="feature-icon"><i class="fa-solid fa-box"></i></div>
         <h3>最用心的包裝</h3>
         <p>精緻包裝呈現完美心意</p>
       </article>
       <article class="feature-card">
-        <span>☎️</span>
+        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
         <h3>24小時線上回應</h3>
         <p>隨時解答您的各種疑惑</p>
       </article>
       <article class="feature-card">
-        <span>💬</span>
+        <div class="feature-icon"><i class="fa-brands fa-line"></i></div>
         <h3>馬上聯繫諮詢</h3>
         <p>LINE立即溝通快速便利</p>
       </article>
