@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   基本型－台中喪禮花籃、告別式花籃｜騰揚開發國際
+  </title>
+  <meta content="騰揚開發國際提供台中喪禮花籃、告別式花籃、追思花籃配送與 LINE 訂購服務。" name="description"/>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <style>
+   :root {
+  --gold:#a87518;
+  --dark:#222;
+  --muted:#666;
+  --line:#e8e0d2;
+  --cream:#fbf7ef;
+  --green:#2f5f42;
+  --footer:#1f1f1f;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  font-family:'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;
+  color:var(--dark);
+  background:#fff;
+  line-height:1.75;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+img {
+  max-width:100%;
+  display:block;
+}
+
+.float {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+}
+
+.float-items {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  opacity:0;
+  transform:translateY(10px);
+  pointer-events:none;
+  transition:.25s;
+}
+
+.float.open .float-items {
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.float a,.float button {
+  width:66px;
+  height:66px;
+  border-radius:20px;
+  border:0;
+  color:#fff;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 28px #0004;
+  cursor:pointer;
+}
+
+.line {
+  background:#06c755;
+}
+
+.ig {
+  background:linear-gradient(135deg,#ff8a00,#e52e71,#6a5cff);
+}
+
+.fb {
+  background:#1877f2;
+}
+
+.tel {
+  background:#333;
+}
+
+.topbtn {
+  background:#7b7167;
+}
+
+.toggle {
+  background:#333;
+  font-size:28px;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  box-shadow:0 3px 14px #0002;
+}
+
+.head {
+  max-width:1220px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  padding:14px 18px;
+}
+
+.desktop-logo {
+    width:210px;
+    display:block;
+}
+
+.mobile-logo {
+    display:none;
+}
+
+.menu-btn {
+  display:none;
+  margin-left:auto;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:9px 12px;
+  font-size:20px;
+}
+
+.nav {
+  display:flex;
+  gap:4px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.nav>li {
+  list-style:none;
+  position:relative;
+}
+
+.nav a {
+  display:block;
+  padding:9px 10px;
+  font-weight:600;
+  color:#555;
+  font-size:15px;
+}
+
+.nav a:hover {
+  color:var(--gold);
+}
+
+.sub {
+  position:absolute;
+  left:50%;
+  top:100%;
+  transform:translateX(-50%);
+  background:#1e5139;
+  min-width:230px;
+  border-radius:4px;
+  padding:8px 0;
+  box-shadow:0 12px 28px #0003;
+  opacity:0;
+  visibility:hidden;
+}
+
+.nav li:hover .sub {
+  opacity:1;
+  visibility:visible;
+}
+
+.sub a {
+  color:#fff;
+  padding:8px 15px;
+}
+
+.sub a:hover {
+  background:#ffffff18;
+  color:#fff;
+}
+
+.container {
+  max-width:1180px;
+  margin:auto;
+  padding:36px 18px;
+}
+
+.breadcrumb {
+  font-size:14px;
+  color:#777;
+  margin:14px 0 28px;
+}
+
+.breadcrumb a {
+  color:#777;
+}
+
+.product {
+  display:grid;
+  grid-template-columns:52% 48%;
+  gap:34px;
+  align-items:start;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:14px;
+}
+
+.thumbs {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.thumbs img {
+  border:1px solid var(--line);
+  cursor:pointer;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  padding:3px;
+  background:#fff;
+}
+
+.thumbs img.active {
+  border:2px solid var(--gold);
+}
+
+.main-img {
+  border:1px solid var(--line);
+  background:#fafafa;
+  padding:6px;
+}
+
+.main-img img {
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.summary h1 {
+  font-size:30px;
+  line-height:1.35;
+  margin:0 0 15px;
+  font-weight:700;
+}
+
+.price {
+  font-size:25px;
+  color:#8d5a00;
+  font-weight:700;
+  margin:0 0 18px;
+}
+
+.notice {
+  color:#555;
+  margin-bottom:18px;
+}
+
+.notice p {
+  margin:7px 0;
+}
+
+.order {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  background:#06c755;
+  color:white;
+  font-weight:800;
+  border-radius:3px;
+  padding:12px 22px;
+  margin:12px 0 22px;
+}
+
+.meta {
+  font-size:14px;
+  color:#666;
+  border-top:1px solid var(--line);
+  padding-top:15px;
+}
+
+.meta a {
+  color:#8d5a00;
+}
+
+.tabs {
+  margin-top:46px;
+  border-top:1px solid var(--line);
+}
+
+.tab-title {
+  display:inline-block;
+  padding:13px 22px;
+  border-top:3px solid var(--gold);
+  font-weight:700;
+  background:#fff;
+}
+
+.desc {
+  padding:24px 0 10px;
+}
+
+.desc h2 {
+  font-size:26px;
+  margin:0 0 8px;
+}
+
+.desc h3 {
+  font-size:21px;
+  margin:28px 0 8px;
+}
+
+.desc ul,.desc ol {
+  padding-left:24px;
+}
+
+.quote {
+  border-left:4px solid var(--gold);
+  background:var(--cream);
+  padding:14px 18px;
+  margin:18px 0;
+  color:#5b4a2e;
+}
+
+.info-table {
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+}
+
+.info-table th,.info-table td {
+  border:1px solid var(--line);
+  padding:11px 14px;
+  text-align:left;
+}
+
+.info-table th {
+  background:var(--cream);
+  width:160px;
+}
+
+.related {
+  margin-top:42px;
+}
+
+.related h2 {
+  font-size:26px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.card {
+  border:1px solid var(--line);
+  background:#fff;
+  text-align:center;
+  padding-bottom:16px;
+  transition:.2s;
+}
+
+.card:hover {
+  box-shadow:0 12px 28px #0002;
+  transform:translateY(-3px);
+}
+
+.card img {
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.card h3 {
+  font-size:16px;
+  line-height:1.45;
+  min-height:48px;
+  padding:0 10px;
+}
+
+.card .p {
+  color:#8d5a00;
+  font-weight:700;
+}
+
+.card .btn {
+  display:inline-block;
+  background:#06c755;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:3px;
+  font-weight:700;
+  margin-top:8px;
+}
+
+.site-footer {
+  margin-top:40px;
+}
+
+.footer-main {
+  display:grid;
+  grid-template-columns:1.1fr 1fr 1fr;
+  gap:28px;
+  align-items:center;
+  background:#f8f8f8;
+  padding:42px max(18px,calc((100vw - 1180px)/2));
+}
+
+.footer-main img {
+  width:310px;
+  margin:auto;
+}
+
+.footer-main h3 {
+  color:var(--gold);
+  letter-spacing:.08em;
+}
+
+.footer-main a {
+  display:block;
+  color:#0875d1;
+  font-weight:700;
+  margin:4px 0;
+}
+
+.copy {
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+}
+
+@media(max-width:800px) {
+  .head {
+    justify-content:space-between;
+  }
+
+  .desktop-logo {
+      display:none;
+  }
+
+  .mobile-logo {
+      display:block;
+      width:280px;
+      height:auto;
+      margin:auto;
+  }
+
+  .menu-btn {
+    display:block;
+  }
+
+  .nav {
+    position:fixed;
+    inset:70px 0 auto 0;
+    background:#fff;
+    display:none;
+    box-shadow:0 10px 30px #0002;
+    padding:10px 18px;
+  }
+
+  .nav.open {
+    display:block;
+  }
+
+  .nav>li {
+    border-bottom:1px solid #eee;
+  }
+
+  .sub {
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border-radius:0;
+    display:none;
+  }
+
+  .nav li.open .sub {
+    display:block;
+  }
+
+  .product {
+    grid-template-columns:1fr;
+  }
+
+  .gallery {
+    grid-template-columns:1fr;
+  }
+
+  .thumbs {
+    flex-direction:row;
+    order:2;
+  }
+
+  .thumbs img {
+    width:72px;
+  }
+
+  .grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-main {
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .float a,.float button {
+    width:58px;
+    height:58px;
+  }
+
+  .summary h1 {
+    font-size:25px;
+  }
+
+}
+  </style>
+ </head>
+ <body id="top">
+  <div class="float" id="float">
+   <div class="float-items">
+    <a class="line" href="https://line.me/ti/p/~restore1101" target="_blank">
+     LINE
+    </a>
+    <a class="ig" href="https://www.instagram.com/tenyoung_1757?igsh=MTcwOXE1OHg1dmlzeg==" target="_blank">
+     IG
+    </a>
+    <a class="fb" href="https://www.facebook.com/share/1EW33SD2rF/?mibextid=wwXIfr" target="_blank">
+     f
+    </a>
+    <a class="topbtn" href="#top">
+     ⌂
+    </a>
+   </div>
+   <button class="toggle" id="toggle">
+    ☰
+   </button>
+  </div>
+  <header>
+   <div class="head">
+    <a class="logo" href="https://leocheng802.github.io/restore111/New騰揚">
+
+        <img class="desktop-logo"
+            src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20騰揚圖片/置頂logo.jpg"
+            alt="騰揚開發國際">
+
+        <img class="mobile-logo"
+            src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20騰揚圖片/Logo%20(1).jpg"
+            alt="騰揚開發國際">
+
+    </a>
+    <button class="menu-btn" id="menuBtn">
+     ☰
+    </button>
+    <ul class="nav" id="nav">
+     <li>
+      <a href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">
+       首頁 / Home
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       台中喪禮花籃
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       喪禮花籃
+      </a>
+      <div class="sub">
+       <a href="#">
+        台中喪禮花籃
+       </a>
+       <a href="#">
+        告別式花籃
+       </a>
+       <a href="#">
+        追思花籃
+       </a>
+      </div>
+     </li>
+     <li>
+      <a href="#">
+       喪禮蘭花
+      </a>
+      <div class="sub">
+       <a href="#">
+        台中喪禮蘭花
+       </a>
+       <a href="#">
+        告別式蘭花
+       </a>
+      </div>
+     </li>
+     <li>
+      <a href="#">
+       祝賀花禮
+      </a>
+      <div class="sub">
+       <a href="#">
+        開幕花籃
+       </a>
+       <a href="#">
+        祝賀蘭花
+       </a>
+       <a href="#">
+        祝壽商品
+       </a>
+      </div>
+     </li>
+     <li>
+      <a href="#">
+       追思用品
+      </a>
+      <div class="sub">
+       <a href="#">
+        喪禮米塔
+       </a>
+       <a href="#">
+        蓮花塔
+       </a>
+       <a href="#">
+        喪禮靈獅
+       </a>
+       <a href="#">
+        紙紮用品
+       </a>
+      </div>
+     </li>
+     <li>
+      <a href="#">
+       花卡範例
+      </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  <main class="container">
+   <div class="breadcrumb">
+    <a href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">
+     首頁
+    </a>
+    /
+    <a href="#">
+     全館商品免運費
+    </a>
+    / 基本型－台中喪禮花籃、告別式花籃
+   </div>
+   <section class="product">
+    <div class="gallery">
+     <div class="thumbs">
+      <img alt="喪禮花籃" class="active" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/product-category/Flower/%E7%B4%AB%E8%89%B2%E8%9D%B4%E8%9D%B6%E8%98%AD%20(1).jpg"/>
+     </div>
+     <div class="main-img">
+      <img alt="基本型台中喪禮花籃" id="mainImg" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/product-category/Flower/%E7%B4%AB%E8%89%B2%E8%9D%B4%E8%9D%B6%E8%98%AD%20(1).jpg"/>
+     </div>
+    </div>
+    <div class="summary">
+     <h1>
+      基本型－台中喪禮花籃、台中告別式花籃
+     </h1>
+     <div class="price">
+      NT$2,500
+     </div>
+     <div class="notice">
+      <p>
+       此商品適合台中告別式、靈堂、公祭、追思會致意使用。
+      </p>
+      <p>
+       喪禮花籃建議以一對兩盆擺放，畫面莊重對稱。
+      </p>
+      <p>
+       所有花材依照當天花況調整，顏色可依往生者年齡、宗教信仰與現場氛圍微調。
+      </p>
+     </div>
+     <a class="order" href="https://line.me/ti/p/~restore1101" target="_blank">
+      <i class="fa-brands fa-line">
+      </i>
+      LINE 訂購
+     </a>
+     <div class="meta">
+      分類：
+      <a href="#">
+       台中喪禮花籃
+      </a>
+      ，
+      <a href="#">
+       全館商品免運費
+      </a>
+      <br/>
+      標籤：台中告別式花籃、台中喪禮花籃、追思花籃、殯儀館花籃
+      <br/>
+      品牌：騰揚開發國際
+     </div>
+    </div>
+   </section>
+   <section class="tabs">
+    <div class="tab-title">
+     描述
+    </div>
+    <div class="desc">
+     <h2>
+      台中殯儀館花籃推薦｜基本型喪禮花籃 1 對 2 盆 NT$2,500
+     </h2>
+     <p>
+      騰揚開發國際提供台中告別式花籃、喪禮花籃與追思花禮服務。基本型花籃適合第一次致意、不確定預算或想要穩重體面的場合。
+     </p>
+     <h3>
+      為什麼「1 對 2 盆」最安全？
+     </h3>
+     <ul>
+      <li>
+       入口或靈堂左右各一盆，視覺更對稱莊重。
+      </li>
+      <li>
+       佛教、道教與一般追思場合皆合宜。
+      </li>
+      <li>
+       不浮誇、不失禮，適合個人、親友、公司部門合送。
+      </li>
+     </ul>
+     <div class="quote">
+      不確定要選花籃、米塔還是蓮花塔？可以直接加 LINE 傳現場照片與預算，騰揚會協助你判斷最合適的款式。
+     </div>
+     <h3>
+      產品資訊一覽
+     </h3>
+     <table class="info-table">
+      <tr>
+       <th>
+        商品名稱
+       </th>
+       <td>
+        基本型台中喪禮花籃，一對兩盆
+       </td>
+      </tr>
+      <tr>
+       <th>
+        價格
+       </th>
+       <td>
+        NT$2,500，含設計、包裝、敬語卡
+       </td>
+      </tr>
+      <tr>
+       <th>
+        適用場合
+       </th>
+       <td>
+        告別式、公祭、頭七、百日、對年、追思會
+       </td>
+      </tr>
+      <tr>
+       <th>
+        擺放位置
+       </th>
+       <td>
+        靈堂入口、會館門口、靈位左右
+       </td>
+      </tr>
+      <tr>
+       <th>
+        服務內容
+       </th>
+       <td>
+        協助確認款式、敬語卡內容、配送與完成回傳
+       </td>
+      </tr>
+     </table>
+     <h3>
+      訂購流程
+     </h3>
+     <ol>
+      <li>
+       加入 LINE，提供日期、場地與時段。
+      </li>
+      <li>
+       指定款式：基本型喪禮花籃 1 對 2 盆。
+      </li>
+      <li>
+       確認敬語卡內容與落款。
+      </li>
+      <li>
+       完成配送後回傳現場照片。
+      </li>
+     </ol>
+     <h3>
+      常見問題
+     </h3>
+     <p>
+      <strong>
+       Q：NT$2,500 會不會不夠體面？
+      </strong>
+      <br/>
+      A：基本型屬於穩重入門款，適合多數致意場合。
+     </p>
+     <p>
+      <strong>
+       Q：可以指定白色或淡色系嗎？
+      </strong>
+      <br/>
+      A：可以，花材會依季節與當日供應微調，但整體會維持莊重素雅。
+     </p>
+     <p>
+      <strong>
+       Q：急件可以嗎？
+      </strong>
+      <br/>
+      A：可先透過 LINE 詢問檔期，請註明「急件」與可聯絡電話。
+     </p>
+    </div>
+   </section>
+   <section class="related">
+    <h2>
+     相關商品
+    </h2>
+    <div class="grid">
+     <article class="card">
+      <img alt="蓮花塔" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E5%B0%81%E9%9D%A2%E7%B8%AE%E5%9C%96/(%E5%B0%81%E9%9D%A2)%E8%93%AE%E8%8A%B1%E5%A1%94.jpg"/>
+      <h3>
+       圓滿蓮花塔
+      </h3>
+      <div class="p">
+       歡迎詢價
+      </div>
+      <a class="btn" href="https://line.me/ti/p/~restore1101" target="_blank">
+       LINE 訂購
+      </a>
+     </article>
+     <article class="card">
+      <img alt="米塔" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E5%B0%81%E9%9D%A2%E7%B8%AE%E5%9C%96/(%E5%B0%81%E9%9D%A2)%E5%96%AA%E7%A6%AE%E7%B1%B3%E5%A1%94.jpg"/>
+      <h3>
+       喪禮米塔／平安米塔
+      </h3>
+      <div class="p">
+       歡迎詢價
+      </div>
+      <a class="btn" href="https://line.me/ti/p/~restore1101" target="_blank">
+       LINE 訂購
+      </a>
+     </article>
+     <article class="card">
+      <img alt="靈獅" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E5%B0%81%E9%9D%A2%E7%B8%AE%E5%9C%96/(%E5%B0%81%E9%9D%A2)%E5%96%AA%E7%A6%AE%E9%9D%88%E7%8D%85.jpg"/>
+      <h3>
+       喪禮靈獅／告別式靈獅
+      </h3>
+      <div class="p">
+       歡迎詢價
+      </div>
+      <a class="btn" href="https://line.me/ti/p/~restore1101" target="_blank">
+       LINE 訂購
+      </a>
+     </article>
+     <article class="card">
+      <img alt="祝賀花籃" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/%E5%B0%81%E9%9D%A2%E7%B8%AE%E5%9C%96/(%E5%B0%81%E9%9D%A2)%E7%A5%9D%E8%B3%80%E8%8A%B1%E7%B1%83.jpg"/>
+      <h3>
+       祝賀高架花籃
+      </h3>
+      <div class="p">
+       歡迎詢價
+      </div>
+      <a class="btn" href="https://line.me/ti/p/~restore1101" target="_blank">
+       LINE 訂購
+      </a>
+     </article>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="footer-main">
+    <div>
+     <img alt="騰揚開發國際" src="https://raw.githubusercontent.com/LeoCheng802/restore111/refs/heads/main/New%20%E9%A8%B0%E6%8F%9A%E5%9C%96%E7%89%87/Logo%20(1).jpg"/>
+    </div>
+    <div>
+     <h3>
+      騰揚開發國際
+     </h3>
+     <p>
+      統一編號：70502770
+     </p>
+     <a href="https://maps.app.goo.gl/zKCtBFSE5zeSFT11A" target="_blank">
+      GOOGLE MAP 五星商家推薦
+     </a>
+     <a href="https://leocheng802.github.io/restore111/New%E9%A8%B0%E6%8F%9A">
+      回到首頁
+     </a>
+     <a href="#">
+      隱私權政策
+     </a>
+    </div>
+    <div>
+     <h3>
+      騰揚開發國際
+     </h3>
+     <a href="#">
+      所有商品－全台免運
+     </a>
+     <a href="#">
+      追思流程－常見問題
+     </a>
+     <a href="#">
+      花禮百科－相關文章
+     </a>
+     <a href="https://line.me/ti/p/~restore1101" target="_blank">
+      聯繫我們－點擊加入 LINE
+     </a>
+    </div>
+   </div>
+   <div class="copy">
+    &copy; 2026 騰揚開發國際, All rights reserved.
+   </div>
+  </footer>
+  <script>
+   const nav=document.getElementById('nav');
+document.getElementById('menuBtn').onclick=()=>nav.classList.toggle('open');
+document.querySelectorAll('.nav>li').forEach(li=>li.onclick=()=> {
+  if(innerWidth<801)li.classList.toggle('open')
+});
+document.querySelectorAll('.thumbs img').forEach(img=>img.onclick=()=> {
+  document.querySelectorAll('.thumbs img').forEach(i=>i.classList.remove('active'));
+  img.classList.add('active');
+  document.getElementById('mainImg').src=img.src
+});
+const fl=document.getElementById('float'),tg=document.getElementById('toggle');
+tg.onclick=()=> {
+  fl.classList.toggle('open');
+  tg.textContent=fl.classList.contains('open')?'✕':'☰'
+};
+  </script>
+ </body>
+</html>
